@@ -7,7 +7,7 @@ const navlinks = [
     },
     {
         name: '🔑 Enter',
-        href: '#'
+        href: '/login'
     },
     {
         name: '⛬ Dashboard',

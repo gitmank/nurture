@@ -18,7 +18,7 @@ export default function Home() {
         <section className='flex flex-col h-[80%] w-[90%] lg:w-[80%] p-10 items-center justify-around border-primary-default border-4 bg-secondary-default'>
           <h1 className={`${orelegaOne.className} text-6xl md:text-8xl font-bold`}>Nurture</h1>
           <h1 className={`text-lg md:text-xl lg:text-2xl font-bold text-center`}>enabling schools to focus on student mental health 💙</h1>
-          <a href="/onboarding" className="relative animate-bounce inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-white rounded-full hover:bg-white group">
+          <a href="/login" className="relative animate-bounce inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-white rounded-full hover:bg-white group">
             <span className="w-80 h-80 rounded rotate-[-40deg] bg-primary-default absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full group-hover:ml-0 group-hover:mb-48 group-hover:translate-x-0"></span>
             <span className="relative w-full text-left text-black text-lg md:text-xl lg:text-2xl transition-colors duration-300 ease-in-out group-hover:text-white">Start your journey!</span>
           </a>
