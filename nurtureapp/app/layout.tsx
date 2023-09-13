@@ -9,7 +9,7 @@ const nunito = Nunito({ subsets: ['latin'] })
 // title and description show up while sharing links, in browser tabs and search results
 export const metadata: Metadata = {
   title: 'Nurture - Mental Health & Well-being',
-  description: 'built by Team Nurture for SIH 2023',
+  description: 'built by Team Nurture for SIH 2023 🇮🇳',
 }
 
 // adding SessionProvider to use useSession() in client components

@@ -1,6 +1,5 @@
-'use client'
+// TODO - make Header a client component that renders based on route
 
-import { useSession } from "next-auth/react"
 import Link from "next/link"
 
 const navlinks = [
@@ -10,7 +9,7 @@ const navlinks = [
     },
     {
         name: '🔑 Enter',
-        href: '/login'
+        href: '/signin'
     },
     {
         name: '🧑‍🎓 Profile',
@@ -23,8 +22,6 @@ const navlinks = [
 ]
 
 export default function Header() {
-
-    const session = useSession()
 
     return (
         <nav className="flex flex-row w-screen h-[100px] items-center justify-around">

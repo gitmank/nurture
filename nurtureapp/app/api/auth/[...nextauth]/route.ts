@@ -1,10 +1,13 @@
+// TODO - check if user is allowed to sign in
+// TODO - save user to database
+
 import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google";
 
 // creating an options object to pass to NextAuth function
 export const OPTIONS = {
     
-    // added google provider for signin
+    // added google provider for signing in
     providers: [
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID,
@@ -12,9 +15,8 @@ export const OPTIONS = {
         })
     ],
 
-    // changed session strategy, forced jwt and set maxAge to 30 days
+    // set maxAge to 30 days
     session: {
-        strategy: "jwt",
         maxAge: 30 * 24 * 60 * 60,
         updateAge: 7 * 24 * 60 * 60,
     },
@@ -24,27 +26,31 @@ export const OPTIONS = {
         signIn: "/signin",
         signOut: "/",
         error: "/error",
-        newUser: "/dashboard",
+        newUser: "/onboarding",
     },
 
     callbacks: {
 
-        // adding a role to the user object for access control
+        // adding a role property to the session.user object
         async session({ session, token, user }) {
-            // TODO - add a role to session.user for access control
+            session.user = {
+                ...session.user,
+                role: token.role,
+            }
             return session;
         },
 
+        // saving the user to db and assigning a role
         async jwt({ token, user, account, profile, isNewUser }) {
 
             // adding default role to all new users
             if(isNewUser) {
                 token.role = "user";
-
-                // TODO - save user to database here
             }
             return token;
         },
+
+        // checking if user is allowed to sign in
         async signIn({ user, account, profile }) {
             const isAllowedToSignIn = true;
             if (isAllowedToSignIn) {
