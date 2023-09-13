@@ -1,3 +1,6 @@
+'use client'
+
+import { useSession } from "next-auth/react"
 import Link from "next/link"
 
 const navlinks = [
@@ -10,12 +13,19 @@ const navlinks = [
         href: '/login'
     },
     {
-        name: '⛬ Dashboard',
-        href: '#'
+        name: '🧑‍🎓 Profile',
+        href: '/profile'
     },
+    // {
+    //     name: '🏫 Dashboard',
+    //     href: '/dashboard'
+    // },
 ]
 
 export default function Header() {
+
+    const session = useSession()
+
     return (
         <nav className="flex flex-row w-screen h-[100px] items-center justify-around">
             {
