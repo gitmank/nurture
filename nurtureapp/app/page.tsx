@@ -4,9 +4,10 @@ import sparkles from '@/public/vectors/sparkles.svg'
 import whirlpool from '@/public/vectors/whirlpool.svg'
 import featureOneImage from '@/public/images/feature-one-image.png'
 import featureTwoImage from '@/public/images/feature-two-image.png'
-import stripofdrawings from '@/public/images/stripofdrawings.png'
 
 import { Orelega_One } from 'next/font/google'
+import { signIn } from 'next-auth/react'
+import SignInButton from '@/components/SignInButton'
 
 const orelegaOne = Orelega_One({ subsets: ['latin'], weight: '400' })
 
@@ -18,10 +19,7 @@ export default function Home() {
         <section className='flex flex-col h-[80%] w-[90%] lg:w-[80%] p-10 items-center justify-around border-primary-default border-4 bg-secondary-default'>
           <h1 className={`${orelegaOne.className} text-6xl md:text-8xl font-bold`}>Nurture</h1>
           <h1 className={`text-lg md:text-xl lg:text-2xl font-bold text-center`}>enabling schools to focus on student mental health 💙</h1>
-          <a href="/login" className="relative animate-bounce inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-white rounded-full hover:bg-white group">
-            <span className="w-80 h-80 rounded rotate-[-40deg] bg-primary-default absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full group-hover:ml-0 group-hover:mb-48 group-hover:translate-x-0"></span>
-            <span className="relative w-full text-left text-black text-lg md:text-xl lg:text-2xl transition-colors duration-300 ease-in-out group-hover:text-white">Start your journey!</span>
-          </a>
+          <SignInButton text="Start your Journey!" />
           <Image src={sparkles} alt="sparkles" className="absolute top-[500px] right-[80%]" />
           <Image src={whirlpool} alt="whirlpool" className="absolute w-16 h-16 fill-white top-[150px] right-3/4" />
           <Image src={sparkles} alt="sparkles" className='absolute w-16 h-16 top-[25%] right-8 lg:right-[200px]' />
@@ -55,7 +53,7 @@ export default function Home() {
           <h1 className='text-4xl font-bold text-secondary-default'>Can I try Nurture?</h1>
           <div className='flex flex-col gap-5'>
             <p className='bg-secondary-default text-black p-2 px-3 rounded-lg'>⏳&nbsp;&nbsp;Nurture is currently in prototype stage</p>
-            <p className='bg-secondary-default text-black p-2 px-3 rounded-lg'>🤞&nbsp;&nbsp;We'll have a demo ready for you soon</p>
+            <p className='bg-secondary-default text-black p-2 px-3 rounded-lg'>🤞&nbsp;&nbsp;You can email us for a demo account</p>
           </div>
         </div>
         <div className='flex flex-col gap-10'>
