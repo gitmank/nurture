@@ -3,9 +3,10 @@
 
 import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google";
+import { NextAuthOptions } from "next-auth";
 
 // creating an options object to pass to NextAuth function
-export const OPTIONS = {
+export const OPTIONS : NextAuthOptions = {
     
     // added google provider for signing in
     providers: [
