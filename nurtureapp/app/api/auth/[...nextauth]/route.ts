@@ -1,8 +1,9 @@
+import { NextAuthOptions } from "next-auth";
 import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google";
 
 // creating an options object to pass to NextAuth function
-export const OPTIONS = {
+export const OPTIONS : NextAuthOptions = {
     
     // added google provider for signin
     providers: [
@@ -14,8 +15,7 @@ export const OPTIONS = {
 
     // changed session strategy, forced jwt and set maxAge to 30 days
     session: {
-        stratergy: "jwt",
-        jwt: true,
+        strategy: "jwt",
         maxAge: 30 * 24 * 60 * 60,
         updateAge: 7 * 24 * 60 * 60,
     },
@@ -32,11 +32,7 @@ export const OPTIONS = {
 
         // adding a role to the user object for access control
         async session({ session, token, user }) {
-            session.user = {
-                ...session.user,
-                // deafult role is user
-                role: token.role ?? "user",
-            }
+            // TODO - add a role to session.user for access control
             return session;
         },
 
