@@ -1,9 +1,8 @@
-import { NextAuthOptions } from "next-auth";
 import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google";
 
 // creating an options object to pass to NextAuth function
-export const OPTIONS : NextAuthOptions = {
+export const OPTIONS = {
     
     // added google provider for signin
     providers: [
