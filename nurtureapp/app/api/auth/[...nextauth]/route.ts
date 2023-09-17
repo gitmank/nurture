@@ -44,10 +44,9 @@ export const OPTIONS : NextAuthOptions = {
         // saving the user to db and assigning a role
         async jwt({ token, user, account, profile, isNewUser }) {
 
-            // adding default role to all new users
-            if(isNewUser) {
-                token.role = "user";
-            }
+            // adding default role to all new sessions
+            token.role = "user";
+
             return token;
         },
 
