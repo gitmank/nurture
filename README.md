@@ -17,3 +17,20 @@ npm install
 npm run dev
 ```
 
+# The Plan
+### Week 1 - authentication
+- [x] configure NextAuth.js
+- [ ] store user to DB
+- [x] create landing page
+
+### Week 2 - access control
+- [ ] upgrade downgrade user role
+- [ ] middleware to protect routes based on role
+- [ ] role based header navlinks
+
+### Week 3 - student onboarding
+- [ ] make user pick role
+- [ ] give 'students' a questionnaire
+
+### Week 4 - THE ALGORITHM
+- [ ] process questionnaire results
