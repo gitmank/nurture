@@ -1,5 +1,5 @@
 # nurture
-SIH'23 idea prototype
+EPICS Project (DSN3099) idea prototype 
 
 # setup for /nurtureapp
 STEP 1 - add an .env.local file with these values
