@@ -21,21 +21,33 @@ const config: Config = {
   },
   plugins: [
     require('@tailwindcss/forms'),
+    require('daisyui'),
   ],
-}
-export default config
-/*
-  This example requires some changes to your config:
-  
+  daisyui: {
+    themes: [
+      {
+        mytheme: {
 
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
+          "primary": "#2563eb",
+
+          "secondary": "#93c5fd",
+
+          "accent": "#67e8f9",
+
+          "neutral": "#6b7280",
+
+          "base-100": "#f3f4f6",
+
+          "info": "#93c5fd",
+
+          "success": "#bef264",
+
+          "warning": "#fde68a",
+
+          "error": "#fda4af",
+        },
+      },
     ],
-  }
-  ```
-*/
+  },
+}
+export default config; 

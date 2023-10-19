@@ -1,7 +1,7 @@
 # nurture
 SIH'23 idea prototype
 
-# setup
+# setup for /nurtureapp
 STEP 1 - add an .env.local file with these values
 ```
 GOOGLE_CLIENT_SECRET='GOCSPX-<yoursecret>'
