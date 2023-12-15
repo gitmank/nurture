@@ -6,10 +6,21 @@
 //
 
 import SwiftUI
+import GoogleSignIn
+import GoogleSignInSwift
 
 struct ContentView: View {
     var body: some View {
         VStack {
+            NavigationLink{
+                //SingInEmailView(showSignInView: $showSignInView)
+            }
+        label:{
+            Text("Sing in with email")
+                .bold()
+                .font(.title)
+             
+        }
             
             Image(systemName: "AppIcon")
                 .imageScale(.large)
