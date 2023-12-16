@@ -59,7 +59,6 @@ export default function Home() {
         <div className='flex flex-col gap-10'>
           <h1 className='text-4xl font-bold text-secondary-default'>About Us</h1>
           <div className='flex flex-col gap-5'>
-            <p className='bg-secondary-default text-black p-2 px-3 rounded-lg'>🇮🇳&nbsp;&nbsp;We're a team participating in the Smart India Hackathon 2023 edition</p>
             <p className='bg-secondary-default text-black p-2 px-3 rounded-lg'>📫&nbsp;&nbsp;You can reach us at <a className='text-blue-600' href='mailto:nominal.grabs0r@icloud.com'>nominal.grabs0r@icloud.com</a></p>
           </div>
         </div>

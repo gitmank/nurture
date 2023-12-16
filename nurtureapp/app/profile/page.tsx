@@ -25,9 +25,14 @@ export default function Page() {
           </h1>
           <SignOutButton styleClass={`text-red-500 text-center hover:text-white hover:scale-[1.01] duration-100 border-2 border-red-400 hover:border-black bg-white hover:bg-red-500 p-1 px-3 rounded-md hover:rounded-lg`} />
         </nav>
-        <main className="flex flex-col h-[400px] w-screen justify-center items-center gap-10 p-14 text-center">
+        <main className="flex flex-col h-max w-screen justify-center items-center gap-10 p-14 text-center">
           <h1 className="text-2xl">Welcome 👋</h1>
           <h3 className="text-lg">We are working on your onboarding experience 🚧</h3>
+          <section className="flex flex-row h-max w-max justify-start items-center gap-5">
+            <div className="flex flex-col h-40 w-52 bg-sky-300 items-center justify-center rounded-md p-5 hover:scale-[1.02] active:scale-95 duration-150 hover:bg-sky-400">
+              <h3 className="text-lg">Take initial assessment</h3>
+            </div>
+          </section>
         </main>
       </section>
     )
