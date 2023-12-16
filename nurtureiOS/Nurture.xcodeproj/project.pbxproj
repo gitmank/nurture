@@ -1,0 +1,726 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		641052FA2B2C178300739D04 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641052F92B2C178300739D04 /* AuthenticationView.swift */; };
+		641052FC2B2C19A600739D04 /* SignInEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641052FB2B2C19A600739D04 /* SignInEmailView.swift */; };
+		641052FE2B2C1F3800739D04 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641052FD2B2C1F3800739D04 /* AuthenticationManager.swift */; };
+		642F96A22AF9272D00556EBB /* NurtureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642F96A12AF9272D00556EBB /* NurtureApp.swift */; };
+		642F96A42AF9272D00556EBB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642F96A32AF9272D00556EBB /* ContentView.swift */; };
+		642F96A62AF9272E00556EBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 642F96A52AF9272E00556EBB /* Assets.xcassets */; };
+		642F96AA2AF9272E00556EBB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 642F96A92AF9272E00556EBB /* Preview Assets.xcassets */; };
+		642F96B42AF9272F00556EBB /* NurtureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642F96B32AF9272F00556EBB /* NurtureTests.swift */; };
+		642F96BE2AF9272F00556EBB /* NurtureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642F96BD2AF9272F00556EBB /* NurtureUITests.swift */; };
+		642F96C02AF9272F00556EBB /* NurtureUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642F96BF2AF9272F00556EBB /* NurtureUITestsLaunchTests.swift */; };
+		64DC153B2B223FD100CACCA9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 64DC153A2B223FD100CACCA9 /* FirebaseAuth */; };
+		64DC153D2B223FD900CACCA9 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 64DC153C2B223FD900CACCA9 /* FirebaseAuthCombine-Community */; };
+		64DCD96A2B29815300A23D3E /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 64DCD9692B29815300A23D3E /* GoogleSignIn */; };
+		64DCD96C2B29815C00A23D3E /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 64DCD96B2B29815C00A23D3E /* GoogleSignInSwift */; };
+		C4EAD9DF2B2D677600682FAA /* QuestionnaireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EAD9DE2B2D677600682FAA /* QuestionnaireView.swift */; };
+		C4EAD9E12B2D679D00682FAA /* MoodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EAD9E02B2D679D00682FAA /* MoodsView.swift */; };
+		C4EAD9E32B2D6A2800682FAA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4EAD9E22B2D6A2800682FAA /* GoogleService-Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		642F96B02AF9272F00556EBB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 642F96962AF9272D00556EBB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 642F969D2AF9272D00556EBB;
+			remoteInfo = Nurture;
+		};
+		642F96BA2AF9272F00556EBB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 642F96962AF9272D00556EBB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 642F969D2AF9272D00556EBB;
+			remoteInfo = Nurture;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		641052F92B2C178300739D04 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		641052FB2B2C19A600739D04 /* SignInEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailView.swift; sourceTree = "<group>"; };
+		641052FD2B2C1F3800739D04 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		642F969E2AF9272D00556EBB /* Nurture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nurture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		642F96A12AF9272D00556EBB /* NurtureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NurtureApp.swift; sourceTree = "<group>"; };
+		642F96A32AF9272D00556EBB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		642F96A52AF9272E00556EBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		642F96A72AF9272E00556EBB /* Nurture.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nurture.entitlements; sourceTree = "<group>"; };
+		642F96A92AF9272E00556EBB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		642F96AF2AF9272F00556EBB /* NurtureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NurtureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		642F96B32AF9272F00556EBB /* NurtureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NurtureTests.swift; sourceTree = "<group>"; };
+		642F96B92AF9272F00556EBB /* NurtureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NurtureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		642F96BD2AF9272F00556EBB /* NurtureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NurtureUITests.swift; sourceTree = "<group>"; };
+		642F96BF2AF9272F00556EBB /* NurtureUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NurtureUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		64DCD9682B28DC2800A23D3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C4EAD9DE2B2D677600682FAA /* QuestionnaireView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireView.swift; sourceTree = "<group>"; };
+		C4EAD9E02B2D679D00682FAA /* MoodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodsView.swift; sourceTree = "<group>"; };
+		C4EAD9E22B2D6A2800682FAA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		642F969B2AF9272D00556EBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64DC153B2B223FD100CACCA9 /* FirebaseAuth in Frameworks */,
+				64DC153D2B223FD900CACCA9 /* FirebaseAuthCombine-Community in Frameworks */,
+				64DCD96A2B29815300A23D3E /* GoogleSignIn in Frameworks */,
+				64DCD96C2B29815C00A23D3E /* GoogleSignInSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		642F96AC2AF9272F00556EBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		642F96B62AF9272F00556EBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		641052F62B2C173100739D04 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				641052F92B2C178300739D04 /* AuthenticationView.swift */,
+				641052FB2B2C19A600739D04 /* SignInEmailView.swift */,
+				641052FD2B2C1F3800739D04 /* AuthenticationManager.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		642F96952AF9272D00556EBB = {
+			isa = PBXGroup;
+			children = (
+				642F96A02AF9272D00556EBB /* Nurture */,
+				642F96B22AF9272F00556EBB /* NurtureTests */,
+				642F96BC2AF9272F00556EBB /* NurtureUITests */,
+				642F969F2AF9272D00556EBB /* Products */,
+				64DC15392B223FD100CACCA9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		642F969F2AF9272D00556EBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				642F969E2AF9272D00556EBB /* Nurture.app */,
+				642F96AF2AF9272F00556EBB /* NurtureTests.xctest */,
+				642F96B92AF9272F00556EBB /* NurtureUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		642F96A02AF9272D00556EBB /* Nurture */ = {
+			isa = PBXGroup;
+			children = (
+				64DCD9682B28DC2800A23D3E /* Info.plist */,
+				642F96A12AF9272D00556EBB /* NurtureApp.swift */,
+				642F96A32AF9272D00556EBB /* ContentView.swift */,
+				C4EAD9DE2B2D677600682FAA /* QuestionnaireView.swift */,
+				C4EAD9E02B2D679D00682FAA /* MoodsView.swift */,
+				C4EAD9E22B2D6A2800682FAA /* GoogleService-Info.plist */,
+				641052F62B2C173100739D04 /* Authentication */,
+				642F96A52AF9272E00556EBB /* Assets.xcassets */,
+				642F96A72AF9272E00556EBB /* Nurture.entitlements */,
+				642F96A82AF9272E00556EBB /* Preview Content */,
+			);
+			path = Nurture;
+			sourceTree = "<group>";
+		};
+		642F96A82AF9272E00556EBB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				642F96A92AF9272E00556EBB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		642F96B22AF9272F00556EBB /* NurtureTests */ = {
+			isa = PBXGroup;
+			children = (
+				642F96B32AF9272F00556EBB /* NurtureTests.swift */,
+			);
+			path = NurtureTests;
+			sourceTree = "<group>";
+		};
+		642F96BC2AF9272F00556EBB /* NurtureUITests */ = {
+			isa = PBXGroup;
+			children = (
+				642F96BD2AF9272F00556EBB /* NurtureUITests.swift */,
+				642F96BF2AF9272F00556EBB /* NurtureUITestsLaunchTests.swift */,
+			);
+			path = NurtureUITests;
+			sourceTree = "<group>";
+		};
+		64DC15392B223FD100CACCA9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		642F969D2AF9272D00556EBB /* Nurture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 642F96C32AF9272F00556EBB /* Build configuration list for PBXNativeTarget "Nurture" */;
+			buildPhases = (
+				642F969A2AF9272D00556EBB /* Sources */,
+				642F969B2AF9272D00556EBB /* Frameworks */,
+				642F969C2AF9272D00556EBB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Nurture;
+			packageProductDependencies = (
+				64DC153A2B223FD100CACCA9 /* FirebaseAuth */,
+				64DC153C2B223FD900CACCA9 /* FirebaseAuthCombine-Community */,
+				64DCD9692B29815300A23D3E /* GoogleSignIn */,
+				64DCD96B2B29815C00A23D3E /* GoogleSignInSwift */,
+			);
+			productName = Nurture;
+			productReference = 642F969E2AF9272D00556EBB /* Nurture.app */;
+			productType = "com.apple.product-type.application";
+		};
+		642F96AE2AF9272F00556EBB /* NurtureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 642F96C62AF9272F00556EBB /* Build configuration list for PBXNativeTarget "NurtureTests" */;
+			buildPhases = (
+				642F96AB2AF9272F00556EBB /* Sources */,
+				642F96AC2AF9272F00556EBB /* Frameworks */,
+				642F96AD2AF9272F00556EBB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				642F96B12AF9272F00556EBB /* PBXTargetDependency */,
+			);
+			name = NurtureTests;
+			productName = NurtureTests;
+			productReference = 642F96AF2AF9272F00556EBB /* NurtureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		642F96B82AF9272F00556EBB /* NurtureUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 642F96C92AF9272F00556EBB /* Build configuration list for PBXNativeTarget "NurtureUITests" */;
+			buildPhases = (
+				642F96B52AF9272F00556EBB /* Sources */,
+				642F96B62AF9272F00556EBB /* Frameworks */,
+				642F96B72AF9272F00556EBB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				642F96BB2AF9272F00556EBB /* PBXTargetDependency */,
+			);
+			name = NurtureUITests;
+			productName = NurtureUITests;
+			productReference = 642F96B92AF9272F00556EBB /* NurtureUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		642F96962AF9272D00556EBB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					642F969D2AF9272D00556EBB = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					642F96AE2AF9272F00556EBB = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 642F969D2AF9272D00556EBB;
+					};
+					642F96B82AF9272F00556EBB = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 642F969D2AF9272D00556EBB;
+					};
+				};
+			};
+			buildConfigurationList = 642F96992AF9272D00556EBB /* Build configuration list for PBXProject "Nurture" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 642F96952AF9272D00556EBB;
+			packageReferences = (
+				64DC15382B223FB200CACCA9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				64DCD9672B28DB4C00A23D3E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
+			productRefGroup = 642F969F2AF9272D00556EBB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				642F969D2AF9272D00556EBB /* Nurture */,
+				642F96AE2AF9272F00556EBB /* NurtureTests */,
+				642F96B82AF9272F00556EBB /* NurtureUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		642F969C2AF9272D00556EBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				642F96AA2AF9272E00556EBB /* Preview Assets.xcassets in Resources */,
+				642F96A62AF9272E00556EBB /* Assets.xcassets in Resources */,
+				C4EAD9E32B2D6A2800682FAA /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		642F96AD2AF9272F00556EBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		642F96B72AF9272F00556EBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		642F969A2AF9272D00556EBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				642F96A42AF9272D00556EBB /* ContentView.swift in Sources */,
+				642F96A22AF9272D00556EBB /* NurtureApp.swift in Sources */,
+				C4EAD9DF2B2D677600682FAA /* QuestionnaireView.swift in Sources */,
+				C4EAD9E12B2D679D00682FAA /* MoodsView.swift in Sources */,
+				641052FA2B2C178300739D04 /* AuthenticationView.swift in Sources */,
+				641052FE2B2C1F3800739D04 /* AuthenticationManager.swift in Sources */,
+				641052FC2B2C19A600739D04 /* SignInEmailView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		642F96AB2AF9272F00556EBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				642F96B42AF9272F00556EBB /* NurtureTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		642F96B52AF9272F00556EBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				642F96C02AF9272F00556EBB /* NurtureUITestsLaunchTests.swift in Sources */,
+				642F96BE2AF9272F00556EBB /* NurtureUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		642F96B12AF9272F00556EBB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 642F969D2AF9272D00556EBB /* Nurture */;
+			targetProxy = 642F96B02AF9272F00556EBB /* PBXContainerItemProxy */;
+		};
+		642F96BB2AF9272F00556EBB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 642F969D2AF9272D00556EBB /* Nurture */;
+			targetProxy = 642F96BA2AF9272F00556EBB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		642F96C12AF9272F00556EBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		642F96C22AF9272F00556EBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		642F96C42AF9272F00556EBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Nurture/Nurture.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Nurture/Preview Content\"";
+				DEVELOPMENT_TEAM = 2U4Q2KK68L;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Nurture/Info.plist;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Pranav-s.Nurture";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		642F96C52AF9272F00556EBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Nurture/Nurture.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Nurture/Preview Content\"";
+				DEVELOPMENT_TEAM = 2U4Q2KK68L;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Nurture/Info.plist;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Pranav-s.Nurture";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		642F96C72AF9272F00556EBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2U4Q2KK68L;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Pranav-s.NurtureTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nurture.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Nurture";
+			};
+			name = Debug;
+		};
+		642F96C82AF9272F00556EBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2U4Q2KK68L;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Pranav-s.NurtureTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nurture.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Nurture";
+			};
+			name = Release;
+		};
+		642F96CA2AF9272F00556EBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2U4Q2KK68L;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Pranav-s.NurtureUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Nurture;
+			};
+			name = Debug;
+		};
+		642F96CB2AF9272F00556EBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2U4Q2KK68L;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Pranav-s.NurtureUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Nurture;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		642F96992AF9272D00556EBB /* Build configuration list for PBXProject "Nurture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				642F96C12AF9272F00556EBB /* Debug */,
+				642F96C22AF9272F00556EBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		642F96C32AF9272F00556EBB /* Build configuration list for PBXNativeTarget "Nurture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				642F96C42AF9272F00556EBB /* Debug */,
+				642F96C52AF9272F00556EBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		642F96C62AF9272F00556EBB /* Build configuration list for PBXNativeTarget "NurtureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				642F96C72AF9272F00556EBB /* Debug */,
+				642F96C82AF9272F00556EBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		642F96C92AF9272F00556EBB /* Build configuration list for PBXNativeTarget "NurtureUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				642F96CA2AF9272F00556EBB /* Debug */,
+				642F96CB2AF9272F00556EBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		64DC15382B223FB200CACCA9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.19.0;
+			};
+		};
+		64DCD9672B28DB4C00A23D3E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		64DC153A2B223FD100CACCA9 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 64DC15382B223FB200CACCA9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		64DC153C2B223FD900CACCA9 /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 64DC15382B223FB200CACCA9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+		64DCD9692B29815300A23D3E /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 64DCD9672B28DB4C00A23D3E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		64DCD96B2B29815C00A23D3E /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 64DCD9672B28DB4C00A23D3E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 642F96962AF9272D00556EBB /* Project object */;
+}
