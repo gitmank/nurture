@@ -13,7 +13,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             NavigationLink{
-                //SingInEmailView(showSignInView: $showSignInView)
+          //      SignInEmailView(showSignInView:$showSignInView)
             }
         label:{
             Text("Sing in with email")

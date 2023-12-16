@@ -23,6 +23,7 @@ final class SignInEmailViewModel: ObservableObject{
                 let returnedUserData = try await AuthenticationManager.shared.createUser(email: email, password: password)
                 print("Successfully logged in")
                 print(returnedUserData)
+               
             }
             catch{
                 print("Error!: \(error)")
@@ -35,49 +36,59 @@ final class SignInEmailViewModel: ObservableObject{
 struct SignInEmailView: View {
     @StateObject private var viewModel = SignInEmailViewModel()
     
-    
+    @State private var shouldNavigate = false
     var body: some View {
-        VStack{
-            TextField("Email", text: $viewModel.email)
+        NavigationView{
+            VStack{
+                TextField("Email", text: $viewModel.email)
                 
-                .bold()
-                .padding()
-                .frame(width: 375)
-                .background(Color.teal.opacity(0.5))
-                .cornerRadius(20)
+                    .bold()
+                    .padding()
+                    .frame(width: 375)
+                    .background(Color.teal.opacity(0.5))
+                    .cornerRadius(20)
                 
-            
-            SecureField("Password" , text: $viewModel.password)
-                .bold()
-                .padding()
-                .frame(width: 375)
-                .background(Color.teal.opacity(0.5))
-                .cornerRadius(20)
-            
-            Button{
-                viewModel.signIn()
-            }label:{
-                Text("Sign In")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .frame(height: 60)
-                    .frame(width: 300)
-                    .background(Color.accentColor)
-                    .cornerRadius(15)
-                    .padding(10)
+                
+                SecureField("Password" , text: $viewModel.password)
+                    .bold()
+                    .padding()
+                    .frame(width: 375)
+                    .background(Color.teal.opacity(0.5))
+                    .cornerRadius(20)
+                
+                Button( action: {
+                    viewModel.signIn()
+                    shouldNavigate = true
+                }) {
+                    Text("Sign In")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .frame(height: 60)
+                        .frame(width: 300)
+                        .background(Color.accentColor)
+                        .cornerRadius(15)
+                        .padding(10)
+                }
+                .fullScreenCover(isPresented: $shouldNavigate, content: {
+                    MoodsView()
+                    
+                })
+                
+                Spacer()
             }
-            Spacer()
+                
+            }
+            .padding()
+            .navigationTitle("Sign In with Email")
         }
-        .padding()
-        .navigationTitle("Sign In with Email")
+        
     }
     
-}
-
-struct SignInEmailView_Previews: PreviewProvider{
-    static var previews: some View{
-        NavigationStack{
-            SignInEmailView()
+    struct SignInEmailView_Previews: PreviewProvider{
+        static var previews: some View{
+            NavigationStack{
+                SignInEmailView()
+            }
         }
     }
-}
+
