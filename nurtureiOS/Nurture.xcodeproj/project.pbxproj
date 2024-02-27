@@ -21,6 +21,9 @@
 		64DC153D2B223FD900CACCA9 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 64DC153C2B223FD900CACCA9 /* FirebaseAuthCombine-Community */; };
 		64DCD96A2B29815300A23D3E /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 64DCD9692B29815300A23D3E /* GoogleSignIn */; };
 		64DCD96C2B29815C00A23D3E /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 64DCD96B2B29815C00A23D3E /* GoogleSignInSwift */; };
+		C40AE6DE2B8CCFDC004B1BFA /* OnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40AE6DD2B8CCFDC004B1BFA /* OnboardingScreen.swift */; };
+		C40AE6E02B8CD04B004B1BFA /* Dependancies.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40AE6DF2B8CD04B004B1BFA /* Dependancies.swift */; };
+		C42F3CCC2B8DC01C005D4F15 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42F3CCB2B8DC01C005D4F15 /* ForgotPasswordView.swift */; };
 		C4EAD9DF2B2D677600682FAA /* QuestionnaireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EAD9DE2B2D677600682FAA /* QuestionnaireView.swift */; };
 		C4EAD9E12B2D679D00682FAA /* MoodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EAD9E02B2D679D00682FAA /* MoodsView.swift */; };
 		C4EAD9E32B2D6A2800682FAA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4EAD9E22B2D6A2800682FAA /* GoogleService-Info.plist */; };
@@ -59,6 +62,9 @@
 		642F96BD2AF9272F00556EBB /* NurtureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NurtureUITests.swift; sourceTree = "<group>"; };
 		642F96BF2AF9272F00556EBB /* NurtureUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NurtureUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		64DCD9682B28DC2800A23D3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C40AE6DD2B8CCFDC004B1BFA /* OnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
+		C40AE6DF2B8CD04B004B1BFA /* Dependancies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependancies.swift; sourceTree = "<group>"; };
+		C42F3CCB2B8DC01C005D4F15 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		C4EAD9DE2B2D677600682FAA /* QuestionnaireView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireView.swift; sourceTree = "<group>"; };
 		C4EAD9E02B2D679D00682FAA /* MoodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodsView.swift; sourceTree = "<group>"; };
 		C4EAD9E22B2D6A2800682FAA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -132,6 +138,9 @@
 				642F96A32AF9272D00556EBB /* ContentView.swift */,
 				C4EAD9DE2B2D677600682FAA /* QuestionnaireView.swift */,
 				C4EAD9E02B2D679D00682FAA /* MoodsView.swift */,
+				C40AE6DD2B8CCFDC004B1BFA /* OnboardingScreen.swift */,
+				C42F3CCB2B8DC01C005D4F15 /* ForgotPasswordView.swift */,
+				C40AE6DF2B8CD04B004B1BFA /* Dependancies.swift */,
 				C4EAD9E22B2D6A2800682FAA /* GoogleService-Info.plist */,
 				641052F62B2C173100739D04 /* Authentication */,
 				642F96A52AF9272E00556EBB /* Assets.xcassets */,
@@ -318,8 +327,11 @@
 				642F96A22AF9272D00556EBB /* NurtureApp.swift in Sources */,
 				C4EAD9DF2B2D677600682FAA /* QuestionnaireView.swift in Sources */,
 				C4EAD9E12B2D679D00682FAA /* MoodsView.swift in Sources */,
+				C40AE6DE2B8CCFDC004B1BFA /* OnboardingScreen.swift in Sources */,
 				641052FA2B2C178300739D04 /* AuthenticationView.swift in Sources */,
+				C40AE6E02B8CD04B004B1BFA /* Dependancies.swift in Sources */,
 				641052FE2B2C1F3800739D04 /* AuthenticationManager.swift in Sources */,
+				C42F3CCC2B8DC01C005D4F15 /* ForgotPasswordView.swift in Sources */,
 				641052FC2B2C19A600739D04 /* SignInEmailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,7 +492,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Nurture/Preview Content\"";
-				DEVELOPMENT_TEAM = 2U4Q2KK68L;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -519,7 +531,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Nurture/Preview Content\"";
-				DEVELOPMENT_TEAM = 2U4Q2KK68L;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

@@ -83,6 +83,8 @@ struct QuestionaireView: View {
                     .padding()
                     .navigationTitle("Questionnaire")
                 }
+        Spacer()
+
     }
     
     func emoji(for index: Int) -> String {
