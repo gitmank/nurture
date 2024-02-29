@@ -1,7 +1,6 @@
 'use client'
 
 import Link from "next/link"
-import { useSession } from "next-auth/react"
 import { usePathname } from "next/navigation"
 
 // add or remove navigation links to this array
@@ -32,20 +31,16 @@ const navlinks = [
 export default function Header() {
 
     // status can be 'authenticated', 'unauthenticated', or 'loading'
-    const { status } = useSession()
 
     // usePathname() returns the current path
     const pathname = usePathname()
-
-    // isSignedIn is true only if the user is signed in
-    const isSignedIn = status === 'authenticated' 
 
     return (
         <nav className="flex flex-row w-screen h-[100px] items-center justify-around bg-black text-white">
             {
                 navlinks
                 .filter(link => link.href !== pathname)
-                .filter(link => link.showIfSignedIn === isSignedIn)
+                .filter(link => link.showIfSignedIn === false)
                 .map((link, index) => {
                     return (
                         <Link className="hover:border-white border-2 p-3 duration-100 rounded-xl border-black" href={link.href} key={index}>

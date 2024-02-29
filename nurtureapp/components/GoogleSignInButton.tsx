@@ -1,7 +1,6 @@
 'use client'
 
 import { useSearchParams } from 'next/navigation'
-import { signIn } from 'next-auth/react'
 
 const GoogleSignInButton = () => {
   const searchParams = useSearchParams()
@@ -10,7 +9,7 @@ const GoogleSignInButton = () => {
   return (
     <button
       className='w-max self-center mt-10 flex flex-row h-max bg-fusion-purple text-white bg-primary-default rounded-md p-3 items-center justify-between gap-3'
-      onClick={() => signIn('google', { callbackUrl })}
+      // onClick={() => signIn('google', { callbackUrl })}
     >
       <svg
         aria-hidden='true'
