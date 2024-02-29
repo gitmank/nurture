@@ -20,7 +20,7 @@ struct OnboardingScreen: View {
                         Image("icon 1")
                             .frame(width: 264, height: 311)
                             .padding(.top, 88)
-                        NavigationLink(destination: {}){
+                        NavigationLink(destination: LoginView() ){
                             Text("Login")
                                 .font(.custom("Chenla", size: 16))
                                 .foregroundStyle(Color.black)

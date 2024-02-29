@@ -11,23 +11,11 @@
 			<string>Google Sign In</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>&lt;?xml</string>
-				<string>version="1.0"</string>
-				<string>encoding="UTF-8"?&gt;
-&lt;!DOCTYPE</string>
-				<string>plist</string>
-				<string>PUBLIC</string>
-				<string>"-//Apple//DTD</string>
-				<string>PLIST</string>
-				<string>1.0//EN"</string>
-				<string>"http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
-&lt;plist</string>
-				<string>version="1.0"&gt;
-&lt;string&gt;com.googleusercontent.apps.9999044841-fbn1ut3g89tmiifoem6tn9rr2r9ph7u7&lt;/string&gt;
-&lt;/plist&gt;
-</string>
+				<string>com.googleusercontent.apps.9999044841-vdmsgj2sm7oumsuihrtt65ov34dcs6rm</string>
 			</array>
 		</dict>
 	</array>
+	<key>GIDClientID</key>
+	<string>9999044841-vdmsgj2sm7oumsuihrtt65ov34dcs6rm.apps.googleusercontent.com</string>
 </dict>
 </plist>
