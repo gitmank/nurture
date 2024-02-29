@@ -14,7 +14,7 @@ struct OnboardingScreen: View {
         NavigationStack{
             GeometryReader{ geo in
                 ZStack{
-                    Color(uiColor: UIColor(hex: "E5E7E8")!)
+                    Color(uiColor: UIColor(hex: "FFFFFF")!)
                         .ignoresSafeArea()
                     VStack{
                         Image("icon 1")
