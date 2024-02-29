@@ -18,19 +18,20 @@ npm run dev
 ```
 
 # The Plan
-### Week 1 - authentication
-- [x] configure NextAuth.js
-- [ ] store user to DB
+### Phase 1 - authentication
 - [x] create landing page
+- [ ] configure firebase
+- [ ] store user to DB
 
-### Week 2 - access control
-- [ ] upgrade downgrade user role
-- [ ] middleware to protect routes based on role
-- [ ] role based header navlinks
+### Phase 2 - onboarding
+- [ ] create dashboard
+- [ ] initial assessment
+- [ ] initial evaluation
 
-### Week 3 - student onboarding
-- [ ] make user pick role
-- [ ] give 'students' a questionnaire
+### Phase 3 - data collection
+- [ ] daily checkins
+- [ ] weekly and monthly stats
 
-### Week 4 - THE ALGORITHM
-- [ ] process questionnaire results
+### Phase 4 - monitoring and alerts
+- [ ] guardian view
+- [ ] school counsellor view
