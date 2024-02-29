@@ -16,7 +16,7 @@ struct NurtureApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack{
-                AuthenticationView()
+                OnboardingScreen()
             }
         }
     }

@@ -31,3 +31,11 @@ final class AuthenticationManager{
         return AuthDataResultModel(user: authDataResult.user)
     }
 }
+
+extension AuthenticationManager {
+    @discardableResult
+    func signInWithGoogle(credential: AuthCredential)async throws -> AuthDataResultModel {
+        let authDataResult = try await Auth.auth().signIn(with: credential)
+        return AuthDataResultModel(user: authDataResult.user)
+    }
+}
