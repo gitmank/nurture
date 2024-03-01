@@ -130,3 +130,4 @@ dist
 .pnp.*
 .DS_Store
 nurtureiOS/Nurture/GoogleService-Info.plist
+.vscode/settings.json
