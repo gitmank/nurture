@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 // firebase google auth imports
 import app from "@/firebase/config";
 import { getAuth } from "@firebase/auth";
-import { signInWithRedirect, GoogleAuthProvider } from "@firebase/auth";
+import { signInWithPopup, GoogleAuthProvider } from "@firebase/auth";
 import GoogleSignInButton from "@/components/GoogleSignInButton";
 
 export default function Page() {
@@ -24,7 +24,7 @@ export default function Page() {
   // handle sign in with google
   const signInHandler = () => {
     try {
-      signInWithRedirect(getAuth(app), new GoogleAuthProvider());
+      signInWithPopup(getAuth(app), new GoogleAuthProvider());
     } catch (error) {
       console.error("An error occurred while signing in");
       console.log(error);
