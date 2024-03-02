@@ -7,7 +7,7 @@ import { getAuth } from "@firebase/auth";
 import { signInWithPopup, GoogleAuthProvider } from "@firebase/auth";
 import GoogleSignInButton from "@/components/GoogleSignInButton";
 
-export default function Page() {
+export default function SignInPage() {
   // store authenticated user
   const [user, setUser] = useState(null);
 
@@ -19,7 +19,7 @@ export default function Page() {
       else if (error) console.error(error);
     });
     return unsubscribe;
-  });
+  }, []);
 
   // handle sign in with google
   const signInHandler = () => {
