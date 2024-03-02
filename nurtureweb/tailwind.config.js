@@ -25,9 +25,9 @@ const config = {
       {
         mytheme: {
 
-          "primary": "#2563eb",
+          "primary": "#133456",
 
-          "secondary": "#93c5fd",
+          "secondary": "#bfd5ef",
 
           "accent": "#67e8f9",
 
