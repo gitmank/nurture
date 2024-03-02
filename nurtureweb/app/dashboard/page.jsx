@@ -29,7 +29,7 @@ export default function DashboardPage() {
             </h1>
             <div className="flex flex-col md:flex-row w-full md:max-w-[800px] h-max items-center justify-between gap-8 text-center md:text-left overflow-scroll no-scrollbar">
               <a
-                href="/dashboard/assessment?type=depression"
+                href="/dashboard/assessment/depression"
                 className="btn btn-accent text-lg"
               >
                 Depression

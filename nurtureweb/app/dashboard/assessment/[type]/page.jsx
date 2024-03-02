@@ -1,14 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import Loading from "@/components/Loading";
 import AssessmentFlow from "@/components/AssessmentFlow";
 
 export default function AssessmentPage() {
-  // get type of assessment
-  const searchParams = useSearchParams();
-  const assessmentType = searchParams.get("type");
+  // get assessment type from URL
+  const pathname = usePathname();
+  const assessmentType = pathname.split("/").pop();
 
   // store assessment
   const [assessment, setAsssessment] = useState(null);
@@ -18,15 +18,18 @@ export default function AssessmentPage() {
 
   // fetch request for assessment data
   const getAssessment = async () => {
-    await fetch(`${process.env.NEXT_PUBLIC_API_URL}/assessment/${assessmentType}`, {
-      method: "GET",
-    })
+    await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/assessment/${assessmentType}`,
+      {
+        method: "GET",
+      }
+    )
       .then((response) => response.json())
       .then((data) => setAsssessment(data))
       .catch((error) => console.error(error));
   };
 
-  if(!assessment) return <Loading />;
+  if (!assessment) return <Loading />;
 
   return (
     <>
