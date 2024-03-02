@@ -8,13 +8,13 @@ const userSchema = new mongoose.Schema({
 });
 const User = mongoose.model("User", userSchema, "users");
 
-const responseSchema = new mongoose.Schema({
+const reportSchema = new mongoose.Schema({
     uid:        { type: String, required: true },
     date:       { type: String, default: new Date().toString() },
     type:       { type: String, required: true },
-    answers:    { type: Array },
+    responses:  { type: Array, required: true },
 });
-const Response = mongoose.model("Response", responseSchema, 'responses');
+const Report = mongoose.model("Report", reportSchema, 'reports');
 
 const assessmentSchema = new mongoose.Schema({
     type:       { type: String, required: true },
@@ -26,5 +26,5 @@ const Assessment = mongoose.model("Assessment", assessmentSchema, 'assessments')
 module.exports = {
     User,
     Assessment,
-    Response,
+    Report,
 };
