@@ -18,7 +18,7 @@ export default function SignOutButton() {
   return (
     <button
       onClick={handleSignOut}
-      className="btn bg-error text-white w-max p-1 px-2"
+      className="btn btn-outline btn-error text-white w-max p-1 px-2"
     >
       Sign Out
     </button>

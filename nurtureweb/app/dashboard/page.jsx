@@ -25,20 +25,20 @@ export default function DashboardPage() {
             <SignOutButton />
           </section>
           <ProfileDetails />
-          <section className="flex flex-col border-2 border-gray-300 rounded-lg p-4 w-full md:max-w-[800px] h-max items-center justify-between gap-8 text-center md:text-left overflow-scroll no-scrollbar">
+          <section className="flex flex-col border-2 border-primary-default rounded-lg p-4 w-full md:max-w-[800px] h-max items-center justify-between gap-8 text-center md:text-left overflow-scroll no-scrollbar">
             <h1 className="text-xl font-bold text-left w-full">
               Quick Assessments
             </h1>
-            <div className="flex flex-col md:flex-row w-full md:max-w-[800px] h-max items-center justify-between gap-8 text-center md:text-left overflow-scroll no-scrollbar">
+            <div className="flex flex-col md:flex-row w-full md:max-w-[800px] h-max items-start justify-between gap-8 text-center md:text-left overflow-scroll no-scrollbar">
               <a
                 href="/dashboard/assessment/depression"
-                className="btn btn-accent text-lg"
+                className="btn btn-secondary text-lg"
               >
                 Depression
               </a>
             </div>
           </section>
-          <section className="flex flex-col border-2 border-gray-300 rounded-lg p-4 w-full md:max-w-[800px] h-max items-center justify-between gap-8 text-center md:text-left overflow-scroll no-scrollbar">
+          <section className="flex flex-col border-2 border-primary-default rounded-lg p-4 w-full md:max-w-[800px] h-max items-center justify-between gap-8 text-center md:text-left overflow-scroll no-scrollbar">
             <h1 className="text-xl font-bold text-left w-full">
               Well-being Report
             </h1>

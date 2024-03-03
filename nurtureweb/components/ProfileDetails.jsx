@@ -101,7 +101,7 @@ export default function ProfileDetails() {
 
   return (
     <>
-      <section className="flex flex-col border-2 border-gray-300 rounded-lg p-4 w-full md:max-w-[800px] h-max items-center justify-between gap-8 text-center md:text-left overflow-scroll no-scrollbar">
+      <section className="flex flex-col border-2 border-primary-default rounded-lg p-4 w-full md:max-w-[800px] h-max items-center justify-between gap-8 text-center md:text-left overflow-scroll no-scrollbar">
         <div className="flex flex-row justify-between items-center w-full h-max">
           <h1 className="text-xl font-bold text-left w-max">Your Profile</h1>
           <button
