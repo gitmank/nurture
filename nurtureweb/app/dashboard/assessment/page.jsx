@@ -32,9 +32,12 @@ export default function AssessmentPage() {
     <>
       <main className="flex flex-col justify-start items-center p-8 h-max min-h-screen w-full gap-8">
         <section className="flex flex-col w-full md:max-w-[800px] h-max items-start justify-between gap-8 text-center md:text-left">
-          <h1 className="text-2xl font-bold text-left w-full">
-            🌸 Initial Assessment
-          </h1>
+          <div className="flex flex-row justify-between items-center w-full h-max">
+            <h1 className="text-2xl font-bold text-left w-full">
+              🌸 Initial Assessment
+            </h1>
+            <a href="/dashboard" className="text-sm h-max w-max p-1 border-2 border-primary-default rounded-lg">Back</a>
+          </div>
           <h3 className="text-xl font-bold text-left w-full">
             {assessment?.type[0].toUpperCase() + assessment?.type.slice(1)}
           </h3>

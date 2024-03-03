@@ -25,8 +25,6 @@ export default function SignInPage() {
   const signInHandler = async () => {
     try {
       const result = await signInWithPopup(getAuth(app), new GoogleAuthProvider());
-      const IDToken = await result.user.getIdToken();
-      // TODO - add user creation request
     } catch (error) {
       console.error("An error occurred while signing in");
       console.log(error);
