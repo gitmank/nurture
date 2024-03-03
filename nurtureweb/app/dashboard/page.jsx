@@ -29,12 +29,18 @@ export default function DashboardPage() {
             <h1 className="text-xl font-bold text-left w-full">
               Quick Assessments
             </h1>
-            <div className="flex flex-col md:flex-row w-full md:max-w-[800px] h-max items-start justify-between gap-8 text-center md:text-left overflow-scroll no-scrollbar">
+            <div className="flex flex-row w-full md:max-w-[800px] h-max items-center justify-start gap-4 text-center md:text-left overflow-scroll no-scrollbar">
               <a
                 href="/dashboard/assessment/depression"
                 className="btn btn-secondary text-lg"
               >
                 Depression
+              </a>
+              <a
+                href="/dashboard/assessment/anxiety"
+                className="btn btn-secondary text-lg"
+              >
+                Anxiety
               </a>
             </div>
           </section>

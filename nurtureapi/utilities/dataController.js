@@ -16,12 +16,12 @@ const getAssessment = async (req, res) => {
 const saveAssessment = async (req, res) => {
     try {
         await connectToMongoDB();
-        const report = {
+        const report = new Report({
             type: req.params.type,
             responses: req.body.responses,
-            user: req.user.uid,
-        };
-        await Report.findOneAndUpdate({ uid: req.user.uid }, report, { upsert: true });
+            uid: req.user.uid,
+        });
+        await report.save();
         res.status(200).end('successfully saved responses');
     } catch (error) {
         console.log(error);
