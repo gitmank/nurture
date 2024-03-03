@@ -31,6 +31,8 @@
 		C4AA6E162B90343600695679 /* DailyCheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AA6E152B90343600695679 /* DailyCheckInView.swift */; };
 		C4AA6E182B90344200695679 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AA6E172B90344200695679 /* ProfileView.swift */; };
 		C4AA6E1A2B90347700695679 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AA6E192B90347700695679 /* Dashboard.swift */; };
+		C4D2D38B2B92FD16007BD7B1 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D2D38A2B92FD16007BD7B1 /* CalendarView.swift */; };
+		C4D2D38D2B933660007BD7B1 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D2D38C2B933660007BD7B1 /* ProfileViewModel.swift */; };
 		C4E0C7152B90223400B22FA5 /* InitialEvaluationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E0C7142B90223400B22FA5 /* InitialEvaluationView.swift */; };
 		C4EAD9DF2B2D677600682FAA /* QuestionnaireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EAD9DE2B2D677600682FAA /* QuestionnaireView.swift */; };
 		C4EAD9E12B2D679D00682FAA /* MoodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EAD9E02B2D679D00682FAA /* MoodsView.swift */; };
@@ -80,6 +82,8 @@
 		C4AA6E152B90343600695679 /* DailyCheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCheckInView.swift; sourceTree = "<group>"; };
 		C4AA6E172B90344200695679 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		C4AA6E192B90347700695679 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
+		C4D2D38A2B92FD16007BD7B1 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		C4D2D38C2B933660007BD7B1 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		C4E0C7142B90223400B22FA5 /* InitialEvaluationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialEvaluationView.swift; sourceTree = "<group>"; };
 		C4EAD9DE2B2D677600682FAA /* QuestionnaireView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireView.swift; sourceTree = "<group>"; };
 		C4EAD9E02B2D679D00682FAA /* MoodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodsView.swift; sourceTree = "<group>"; };
@@ -158,8 +162,10 @@
 				C4E0C7142B90223400B22FA5 /* InitialEvaluationView.swift */,
 				C4AA6E192B90347700695679 /* Dashboard.swift */,
 				C4AA6E132B90342700695679 /* HomeView.swift */,
+				C4D2D38A2B92FD16007BD7B1 /* CalendarView.swift */,
 				C4AA6E152B90343600695679 /* DailyCheckInView.swift */,
 				C4AA6E172B90344200695679 /* ProfileView.swift */,
+				C4D2D38C2B933660007BD7B1 /* ProfileViewModel.swift */,
 				C44580902B8F611A004492C1 /* LoginView.swift */,
 				C44580922B8F64D1004492C1 /* LoginViewModel.swift */,
 				C44580942B8F64E5004492C1 /* Utilities.swift */,
@@ -359,7 +365,9 @@
 				641052FA2B2C178300739D04 /* AuthenticationView.swift in Sources */,
 				C4AA6E182B90344200695679 /* ProfileView.swift in Sources */,
 				C40AE6E02B8CD04B004B1BFA /* Dependancies.swift in Sources */,
+				C4D2D38B2B92FD16007BD7B1 /* CalendarView.swift in Sources */,
 				641052FE2B2C1F3800739D04 /* AuthenticationManager.swift in Sources */,
+				C4D2D38D2B933660007BD7B1 /* ProfileViewModel.swift in Sources */,
 				C4E0C7152B90223400B22FA5 /* InitialEvaluationView.swift in Sources */,
 				C44580932B8F64D1004492C1 /* LoginViewModel.swift in Sources */,
 				C44580912B8F611A004492C1 /* LoginView.swift in Sources */,
