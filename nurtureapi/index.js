@@ -4,7 +4,7 @@ require('dotenv').config();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const { validateToken } = require('./utilities/middleware');
-const { getAssessment, saveAssessment, getProfile } = require('./utilities/dataController');
+const { getAssessment, saveAssessment, getProfile, updateProfile } = require('./utilities/dataController');
 const corsConfig = require('./utilities/cors-config');
 
 // initialize express app
