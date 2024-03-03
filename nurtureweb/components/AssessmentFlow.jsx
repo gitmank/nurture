@@ -106,7 +106,7 @@ export default function AssessmentFlow({ assessment }) {
                     ? "btn-success join-item btn btn-square hidden md:block"
                     : question === index
                     ? "btn-primary join-item btn btn-square"
-                    : "join-item btn btn-square"
+                    : "join-item btn btn-square hidden md:block"
                 }
               >
                 {index}
