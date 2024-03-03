@@ -33,9 +33,6 @@ export default function AssessmentFlow({ assessment }) {
   };
 
   const handleSubmit = async () => {
-    console.log(responses.filter(a => a >= 0).length, assessment?.questions.length);
-    console.log(responses);
-    return;
     if (responses.includes(-1)) return;
     if (!user) return;
     setSaving(SAVE_STATUS.SAVING);
@@ -88,7 +85,7 @@ export default function AssessmentFlow({ assessment }) {
                   });
                   nextQuestion();
                 }}
-                className="btn btn-secondary hover:btn-accent text-base w-full h-max p-2 max-w-[300px]"
+                className="btn btn-secondary text-base w-full h-max p-2 max-w-[300px]"
               >
                 {option}
               </button>
