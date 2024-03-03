@@ -41,7 +41,7 @@ const config = {
 
           "warning": "#fde68a",
 
-          "error": "#fda4af",
+          "error": "#fe6667",
         },
       },
     ],

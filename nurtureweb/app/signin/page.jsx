@@ -22,9 +22,9 @@ export default function SignInPage() {
   }, []);
 
   // handle sign in with google
-  const signInHandler = () => {
+  const signInHandler = async () => {
     try {
-      signInWithPopup(getAuth(app), new GoogleAuthProvider());
+      const result = await signInWithPopup(getAuth(app), new GoogleAuthProvider());
     } catch (error) {
       console.error("An error occurred while signing in");
       console.log(error);
