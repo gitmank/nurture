@@ -14,7 +14,9 @@ export default function AssessmentPage() {
   const [assessment, setAsssessment] = useState(null);
 
   // get assessment data on page load
-  useEffect(() => getAssessment, []);
+  useEffect(() => {
+    getAssessment();
+  }, []);
 
   // fetch request for assessment data
   const getAssessment = async () => {
