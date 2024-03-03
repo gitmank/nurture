@@ -9,8 +9,8 @@ import Foundation
 
 class InitialEvalutationViewModel: ObservableObject{
   
-    @Published var assessment : [EvalMethod] = []
-    func initialEvalFetchQuestions() async throws {
+    @Published var fetchedResult: [String: Any]?
+    func initialEvalFetchQuestions() {
         
         let url = URL(string:"https://mank.devscene.co/assessment/depression")!
         
@@ -25,14 +25,13 @@ class InitialEvalutationViewModel: ObservableObject{
             }else if let HttpResponse = response as? HTTPURLResponse {
                 if(HttpResponse.statusCode == 200){
                     if let data = data,
-                       let decodeResult = try? JSONDecoder().decode([EvalMethod].self, from: data),
+                      
                        let result = try? JSONSerialization.jsonObject(with: data, options: []) as? [String:Any]{
                         print("SUCCESS")
-                        print(decodeResult)
-                        self.assessment = decodeResult
+                        print(result)
+                        self.fetchedResult = result
+                  
                     }
-                   
-                    
                 }
             }
         }

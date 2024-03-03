@@ -11,8 +11,9 @@ import SwiftUI
 
 struct InitialEvaluationView: View {
     @StateObject var viewModel = InitialEvalutationViewModel()
-    @State var arr = ["Kill yourself by Bo Burnham on YouTube by Google "]
-//    , "Qeustion 2", "Question 3", "Question 4"
+    @State var arr : [String] = []
+    @State var arr1 : [String] = []
+
     var body: some View {
         NavigationStack{
             VStack{
@@ -33,19 +34,21 @@ struct InitialEvaluationView: View {
                         .frame(width:350, height: 400)
                         .padding(20)
                     
-                    VStack {
-                        ForEach(arr,id:  \.self){ x in
-                            Text(arr[0])
+                 VStack {
+                     
+                        ForEach(arr, id: \.self) { item in
+                            Text(item) // Display each item in the arr array
                                 .font(.title2)
                                 .bold()
                                 .padding(.init(top: 10, leading: -10, bottom: 10, trailing: 0))
-                            
-                        Rectangle()
-                                .frame(width:300,  height: 275)
-                            
-                            
                         }
-                        
+                     ForEach(arr1, id: \.self) { item in
+                         Text(item) // Display each item in the arr array
+                             .font(.title2)
+                             .bold()
+                             .padding(.init(top: 10, leading: -10, bottom: 10, trailing: 0))
+                     }
+                      
                     }
                     Text("Option1")
                         .font(.title)
@@ -66,15 +69,20 @@ struct InitialEvaluationView: View {
                         .foregroundStyle(Color.white)
                         .font(.title3)
                     }
-                .task{
-                    do {
-                        try await viewModel.initialEvalFetchQuestions()
-                    } catch {
-                        print("errr")
-                    }
-                }
+             
                 .navigationTitle("Inital Evaluation")
 
+            }
+            .onAppear {
+                viewModel.initialEvalFetchQuestions() // Fetch questions when view appears
+            }
+            .onReceive(viewModel.$fetchedResult){ fetchedResult in
+                if let questions = fetchedResult?["questions"] as? [String] {
+                    arr = questions
+                }
+                if let options = fetchedResult?["options"] as? [String] {
+                    arr1 = options
+                }
             }
         }
     }
