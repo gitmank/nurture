@@ -43,8 +43,8 @@ const getProfile = async (req, res) => {
 const updateProfile = async (req, res) => {
     try {
         await connectToMongoDB();
-        await User.findOneAndUpdate({ uid: req.user.uid }, req.body.profile, { upsert: true });
-        res.status(200).end('successfully updated profile');
+        await User.findOneAndUpdate({ uid: req.user.uid }, req.body, { upsert: true });
+        res.status(200).send("successfully updated profile");
     } catch (error) {
         console.log(error);
         res.status(500).send("error updating profile");
