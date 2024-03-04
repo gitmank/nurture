@@ -1,5 +1,6 @@
 // import firebase app from SDK
 import { initializeApp } from "firebase/app";
+import { getApps } from "firebase/app";
 
 // firebase configuration
 const firebaseConfig = {
@@ -12,6 +13,6 @@ const firebaseConfig = {
 };
 
 // initialize firebase app
-const app = initializeApp(firebaseConfig);
+const app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
 
 export default app;

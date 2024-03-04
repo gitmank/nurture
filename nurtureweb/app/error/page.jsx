@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import smiley from '@/public/images/smiley.png'
 
-export default function Page({ searchParams }) {
+export default function ErrorPage({ searchParams }) {
 
     const message = searchParams.message
 

@@ -7,7 +7,7 @@ import { getAuth } from "@firebase/auth";
 import { signInWithPopup, GoogleAuthProvider } from "@firebase/auth";
 import GoogleSignInButton from "@/components/GoogleSignInButton";
 
-export default function Page() {
+export default function SignInPage() {
   // store authenticated user
   const [user, setUser] = useState(null);
 
@@ -19,12 +19,12 @@ export default function Page() {
       else if (error) console.error(error);
     });
     return unsubscribe;
-  });
+  }, []);
 
   // handle sign in with google
-  const signInHandler = () => {
+  const signInHandler = async () => {
     try {
-      signInWithPopup(getAuth(app), new GoogleAuthProvider());
+      const result = await signInWithPopup(getAuth(app), new GoogleAuthProvider());
     } catch (error) {
       console.error("An error occurred while signing in");
       console.log(error);

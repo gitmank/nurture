@@ -39,7 +39,7 @@ struct InitialEvaluationView: View {
                             
                             
                             Text(question) // Display each item in the arr array
-                                .font(.title3)
+                                .font(.title2)
                                 .bold()
                                 .padding(.init(top: 2, leading: 10, bottom: 200, trailing: 5))
                                 

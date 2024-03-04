@@ -1,4 +1,4 @@
-import Header from '@/components/Header'
+import HomeNav from '@/components/HomeNav'
 import Image from 'next/image'
 import sparkles from '@/public/vectors/sparkles.svg'
 import whirlpool from '@/public/vectors/whirlpool.svg'
@@ -11,7 +11,7 @@ const orelegaOne = Orelega_One({ subsets: ['latin'], weight: '400' })
 export default function Home() {
   return (
     <main className="flex h-max w-screen flex-col items-center justify-between bg-black text-white">
-      <Header />
+      <HomeNav />
       <section className="flex flex-col items-center justify-center w-screen h-[500px] md:h-[600px] lg:h-[600px] xl:h-[700px] bg-white text-primary-default">
         <section className='flex flex-col h-[80%] w-[90%] lg:w-[80%] p-10 items-center justify-around border-primary-default border-4 bg-secondary-default'>
           <h1 className={`${orelegaOne.className} text-6xl md:text-8xl font-bold`}>Nurture</h1>
