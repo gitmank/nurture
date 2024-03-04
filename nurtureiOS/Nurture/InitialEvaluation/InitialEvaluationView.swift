@@ -13,9 +13,10 @@ struct InitialEvaluationView: View {
     @StateObject var viewModel = InitialEvalutationViewModel()
     @State var questions : [String] = []
     @State var options : [String] = []
-    @State var type : String = ""
+    @Binding var type : String
     @State var questionnaire: [String:String] = [:]
     @State var selectedOption: [Int] = Array(repeating: -1, count: 9)
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         NavigationStack{
@@ -65,11 +66,12 @@ struct InitialEvaluationView: View {
                     
                 }
                 Spacer()
-                NavigationLink(destination:{EvaluationSummaryView()}){
+               
                     Button {
                         Task {
                             do {
-                                try await viewModel.sendInitialEvalResponses(selectedOption)
+                                try await viewModel.sendInitialEvalResponses(selectedOption, type)
+                                dismiss()
                             } catch {
                                 print("Error sending data: \(error)")
                             }
@@ -85,14 +87,18 @@ struct InitialEvaluationView: View {
                             .font(.title3)
                     }
                     .padding(.leading, 175)
-                }
+                
                 
                 .navigationTitle("Inital Evaluation")
                 
                 
             }
             .onAppear {
-                viewModel.initialEvalFetchQuestions() // Fetch questions when view appears
+                if type == "depression" {
+                    viewModel.initialEvalFetchQuestions(type) // Fetch questions when view appears
+                } else if type == "anxiety" {
+                    viewModel.initialEvalFetchQuestions(type)
+                }
             }
             .onReceive(viewModel.$fetchedResult){ fetchedResult in
                 if let question = fetchedResult?["questions"] as? [String] {
@@ -147,7 +153,7 @@ struct radioButtonView: View {
         
 }
 
-#Preview {
-    InitialEvaluationView()
-}
+//#Preview {
+//    InitialEvaluationView(type: .constant("depression"))
+//}
 

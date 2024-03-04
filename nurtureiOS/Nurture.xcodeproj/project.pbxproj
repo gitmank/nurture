@@ -166,15 +166,9 @@
 				C4EAD9E02B2D679D00682FAA /* MoodsView.swift */,
 				C40AE6DD2B8CCFDC004B1BFA /* OnboardingScreen.swift */,
 				645D71482B9444A400C67EEE /* InitialEvaluation */,
-				C4AA6E192B90347700695679 /* Dashboard.swift */,
-				C4AA6E132B90342700695679 /* HomeView.swift */,
-				C4F588CD2B96326E007E5AD2 /* CalendarView.swift */,
-				C4AA6E152B90343600695679 /* DailyCheckInView.swift */,
-				C4AA6E172B90344200695679 /* ProfileView.swift */,
-				C44580902B8F611A004492C1 /* LoginView.swift */,
-				C44580922B8F64D1004492C1 /* LoginViewModel.swift */,
+				C4F588D02B9635BC007E5AD2 /* Views */,
+				C4F588D12B9635E1007E5AD2 /* Login */,
 				C44580942B8F64E5004492C1 /* Utilities.swift */,
-				C42F3CCB2B8DC01C005D4F15 /* ForgotPasswordView.swift */,
 				C40AE6DF2B8CD04B004B1BFA /* Dependancies.swift */,
 				C4EAD9E22B2D6A2800682FAA /* GoogleService-Info.plist */,
 				641052F62B2C173100739D04 /* Authentication */,
@@ -235,6 +229,28 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C4F588D02B9635BC007E5AD2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C4AA6E192B90347700695679 /* Dashboard.swift */,
+				C4AA6E132B90342700695679 /* HomeView.swift */,
+				C4F588CD2B96326E007E5AD2 /* CalendarView.swift */,
+				C4AA6E152B90343600695679 /* DailyCheckInView.swift */,
+				C4AA6E172B90344200695679 /* ProfileView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C4F588D12B9635E1007E5AD2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C44580902B8F611A004492C1 /* LoginView.swift */,
+				C44580922B8F64D1004492C1 /* LoginViewModel.swift */,
+				C42F3CCB2B8DC01C005D4F15 /* ForgotPasswordView.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
