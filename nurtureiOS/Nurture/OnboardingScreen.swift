@@ -31,7 +31,7 @@ struct OnboardingScreen: View {
                                 }
                         }
                         .padding(.top,40)
-                        NavigationLink(destination: {}) {
+                        NavigationLink(destination: LoginView()) {
                             Text("Sign Up")
                                 .font(.custom("Chenla", size: 16))
                                 .foregroundStyle(Color.black)
