@@ -20,12 +20,12 @@ npm run dev
 # The Plan
 ### Phase 1 - authentication
 - [x] create landing page
-- [ ] configure firebase
-- [ ] store user to DB
+- [x] configure firebase
+- [x] store user to DB
 
 ### Phase 2 - onboarding
-- [ ] create dashboard
-- [ ] initial assessment
+- [x] create dashboard
+- [x] initial assessment
 - [ ] initial evaluation
 
 ### Phase 3 - data collection
