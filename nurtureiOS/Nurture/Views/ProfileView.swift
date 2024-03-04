@@ -15,6 +15,9 @@ struct mood: Identifiable {
 }
 
 struct ProfileView: View {
+    @State private var showOnboardingScreen = false
+    @State private var showLogoutAlert = false
+    
     @State private var name: String = ""
     @State private var school: String = ""
     @State private var age: String = ""
@@ -47,6 +50,32 @@ struct ProfileView: View {
         GeometryReader{ geo in
             VStack {
                 Text("Profile")
+                Button{
+                    showLogoutAlert = true
+                } label: {
+                    Text("Log Out")
+                        .foregroundStyle(.white)
+                }
+                .background{
+                    RoundedRectangle(cornerRadius: 7)
+                        .foregroundStyle(.red)
+                        .frame(width: 100, height: 25)
+                }
+                .frame(width: 100, height: 25)
+                .padding(.leading,275)
+                .alert(isPresented: $showLogoutAlert) {
+                    Alert(title: Text("Confirm Logout"), message: Text("Are you sure you want to log out?"), primaryButton: .cancel(), secondaryButton: .destructive(Text("Logout")) {
+                        Task{
+                            do {
+                                try AuthenticationManager.shared.signOut()
+                                showOnboardingScreen = true
+                            } catch {
+                                print("Error Signing Out")
+                            }
+                        }
+                    })
+                }
+                
                 HStack{
                     Image(systemName: "person.circle")
                         .font(.custom("cabin", size: 100))
@@ -136,13 +165,11 @@ struct ProfileView: View {
                         .foregroundStyle(Color(uiColor: UIColor(hex: "D9D9D9")!))
                 }
                 Spacer()
-                Section {
-                    Button(action: {}) {
-                        Text("Log Out")
-                    }
-                }
-                .background(Color.green)
+              
                 
+            }
+            .fullScreenCover(isPresented: $showOnboardingScreen) {
+                OnboardingScreen()
             }
             .frame(width: geo.size.width, height: geo.size.height)
         }
