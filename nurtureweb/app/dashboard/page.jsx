@@ -44,7 +44,7 @@ export default function DashboardPage() {
               </a>
             </div>
           </section>
-          <section className="flex flex-col border-2 border-primary-default rounded-lg p-4 w-full md:max-w-[800px] h-max items-center justify-between gap-8 text-center md:text-left overflow-scroll no-scrollbar">
+          <section className="flex flex-col border-2 border-primary-default rounded-lg p-4 w-full md:max-w-[800px] h-max items-center justify-between gap-8 text-center md:text-left overflow-scroll no-scrollbar mb-16">
             <h1 className="text-xl font-bold text-left w-full">
               Well-being Report
             </h1>

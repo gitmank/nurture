@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   box-sizing: border-box;
   margin: 0;
@@ -17,6 +23,79 @@ body {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .no-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* slider styles */
+.neumorphic-slider {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.neumorphic-slider:focus {
+  outline: none;
+}
+.neumorphic-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+.neumorphic-slider::-moz-range-thumb {
+  border: none;
+}
+
+.range-style {
+  width: 400px;
+  height: 60px;
+  padding: 20px;
+  /* box background color */
+  background: #eaeaea;
+  border-radius: 10px;
+  /* outside shadow */
+  box-shadow: -2px -2px 8px whitesmoke, 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+.range-style::-webkit-slider-runnable-track {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  border-radius: 10px;
+  /* inside shadow */
+  box-shadow: inset -2px -2px 8px whitesmoke,
+    inset 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+.range-style::-webkit-slider-thumb {
+  position: relative;
+  top: -50%;
+  width: 40px;
+  height: 40px;
+  /* thumb circle color */
+  background-color: #aed2ff;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+  border-radius: 50%;
+  box-shadow: -1px -1px 2px whitesmoke, 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+.range-style::-moz-range-track {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  border-radius: 10px;
+  box-shadow: inset -2px -2px 8px whitesmoke,
+    inset 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+.range-style::-moz-range-thumb {
+  position: relative;
+  top: -50%;
+  width: 40px;
+  height: 40px;
+  background-color: #aed2ff;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+  border-radius: 50%;
+  box-shadow: -1px -1px 2px whitesmoke, 1px 1px 2px rgba(0, 0, 0, 0.3);
 }

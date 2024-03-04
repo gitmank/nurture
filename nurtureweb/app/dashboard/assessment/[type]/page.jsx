@@ -41,7 +41,7 @@ export default function AssessmentPage() {
             🌸 Initial Assessment
           </h1>
           <h3 className="text-xl font-bold text-left w-full">
-            {assessment?.type[0].toUpperCase() + assessment?.type.slice(1)}
+            {assessment?.type[0].toUpperCase() + assessment?.type.slice(1)} risk
           </h3>
         </section>
         <AssessmentFlow assessment={assessment} />
@@ -49,3 +49,4 @@ export default function AssessmentPage() {
     </>
   );
 }
+ 
