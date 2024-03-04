@@ -11,7 +11,7 @@ import GoogleSignInSwift
 
 struct LoginView: View {
     @StateObject var viewModel = LoginViewModel()
-    @State private var showInitialEvalView = false
+    @State private var showHomeView = false
     var body: some View {
         VStack(alignment: .center, spacing: 25){
             Image("icon 1")
@@ -36,17 +36,18 @@ struct LoginView: View {
                 Task {
                     do {
                         try await viewModel.googleSignIn()
-                        showInitialEvalView = true
+                        showHomeView = true
                     } catch {
                         print("Error")
                     }
                 }
             }
             .padding()
-            .fullScreenCover(isPresented: $showInitialEvalView) {
-                InitialEvaluationView()
+            .fullScreenCover(isPresented: $showHomeView) {
+                Dashboard(selectedTab: 0)
             }
         }
+        .background(Color.white)
     }
 }
 

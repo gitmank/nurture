@@ -39,6 +39,7 @@
 		C4EAD9DF2B2D677600682FAA /* QuestionnaireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EAD9DE2B2D677600682FAA /* QuestionnaireView.swift */; };
 		C4EAD9E12B2D679D00682FAA /* MoodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EAD9E02B2D679D00682FAA /* MoodsView.swift */; };
 		C4EAD9E32B2D6A2800682FAA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4EAD9E22B2D6A2800682FAA /* GoogleService-Info.plist */; };
+		C4F588CE2B96326E007E5AD2 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F588CD2B96326E007E5AD2 /* CalendarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		C4EAD9DE2B2D677600682FAA /* QuestionnaireView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireView.swift; sourceTree = "<group>"; };
 		C4EAD9E02B2D679D00682FAA /* MoodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodsView.swift; sourceTree = "<group>"; };
 		C4EAD9E22B2D6A2800682FAA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C4F588CD2B96326E007E5AD2 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 				645D71482B9444A400C67EEE /* InitialEvaluation */,
 				C4AA6E192B90347700695679 /* Dashboard.swift */,
 				C4AA6E132B90342700695679 /* HomeView.swift */,
+				C4F588CD2B96326E007E5AD2 /* CalendarView.swift */,
 				C4AA6E152B90343600695679 /* DailyCheckInView.swift */,
 				C4AA6E172B90344200695679 /* ProfileView.swift */,
 				C44580902B8F611A004492C1 /* LoginView.swift */,
@@ -377,6 +380,7 @@
 			files = (
 				645D71472B9423DC00C67EEE /* InitialEvalModel.swift in Sources */,
 				642F96A42AF9272D00556EBB /* ContentView.swift in Sources */,
+				C4F588CE2B96326E007E5AD2 /* CalendarView.swift in Sources */,
 				642F96A22AF9272D00556EBB /* NurtureApp.swift in Sources */,
 				C4EAD9DF2B2D677600682FAA /* QuestionnaireView.swift in Sources */,
 				C4AA6E142B90342700695679 /* HomeView.swift in Sources */,

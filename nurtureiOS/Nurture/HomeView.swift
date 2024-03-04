@@ -59,7 +59,7 @@ struct HomeView: View {
                             .foregroundStyle(Color(uiColor: UIColor(hex: "D9D9D9")!))
                             .frame(width: UIScreen.main.bounds.width, height: 100)
                         VStack{
-                            NavigationLink(destination: CalendarView()) {
+                            NavigationLink(destination: {}) {
                                 Image(systemName: "chevron.right")
                                     .padding()
                             }

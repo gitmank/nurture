@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @StateObject var model = ProfileViewModel()
     @State private var name: String = ""
     @State private var school: String = ""
     @State private var age: String = ""
@@ -68,13 +67,6 @@ struct ProfileView: View {
                 }
                 .background(Color.green)
                 
-            }
-            .task {
-                do {
-                    try await model.getDetail()
-                } catch {
-                    print("error")
-                }
             }
             .frame(width: geo.size.width, height: geo.size.height)
         }
