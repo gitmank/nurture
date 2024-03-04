@@ -13,10 +13,13 @@ struct DialHeaderView: View {
         ZStack{
                 HStack(alignment: .top){
                     VStack(alignment: .leading, spacing:10){
-                        Text("FIRST NAME")
+                        Text("Hey, FIRST NAME")
                             .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                             .bold()
+                            .foregroundStyle(Color.black)
                         Text("LASTNAME")
+                            .foregroundStyle(Color.gray)
+                            .font(.title2)
                     }
                     Spacer()
                 

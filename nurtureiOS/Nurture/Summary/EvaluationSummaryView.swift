@@ -31,6 +31,10 @@ struct DialView: View {
             Circle().fill(Color(uiColor: UIColor(hex: "F9F9F9")!))
                 .shadow(color: .gray, radius: 5, x:-5,y:5)
                 .shadow(color: .white, radius: 5, x:1,y:1)
+            Text("Risk")
+                .font(.title)
+                .fontWeight(.semibold)
+            
                             
         }
         

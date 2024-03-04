@@ -9,10 +9,10 @@ import Foundation
 
 struct EvalMethod: Codable {
     let id, type: String
-    let questions, options: [String]
+    let questions, option: [String]
 
     enum CodingKeys: String, CodingKey {
         case id = "_id"
-        case type, questions, options
+        case type, questions, option
     }
 }

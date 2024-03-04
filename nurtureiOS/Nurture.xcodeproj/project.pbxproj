@@ -163,7 +163,7 @@
 				C4EAD9DE2B2D677600682FAA /* QuestionnaireView.swift */,
 				C4EAD9E02B2D679D00682FAA /* MoodsView.swift */,
 				C40AE6DD2B8CCFDC004B1BFA /* OnboardingScreen.swift */,
-				C4E0C7142B90223400B22FA5 /* InitialEvaluationView.swift */,
+				645D71482B9444A400C67EEE /* InitialEvaluation */,
 				C4AA6E192B90347700695679 /* Dashboard.swift */,
 				C4AA6E132B90342700695679 /* HomeView.swift */,
 				C4AA6E152B90343600695679 /* DailyCheckInView.swift */,
@@ -173,15 +173,12 @@
 				C44580942B8F64E5004492C1 /* Utilities.swift */,
 				C42F3CCB2B8DC01C005D4F15 /* ForgotPasswordView.swift */,
 				C40AE6DF2B8CD04B004B1BFA /* Dependancies.swift */,
-				645D71442B9362F200C67EEE /* InitialEvalutationViewModel.swift */,
-				645D71462B9423DC00C67EEE /* InitialEvalModel.swift */,
 				C4EAD9E22B2D6A2800682FAA /* GoogleService-Info.plist */,
 				641052F62B2C173100739D04 /* Authentication */,
 				642F96A52AF9272E00556EBB /* Assets.xcassets */,
 				642F96A72AF9272E00556EBB /* Nurture.entitlements */,
 				642F96A82AF9272E00556EBB /* Preview Content */,
-				64303A9D2B92FABE00DDBB8B /* EvaluationSummaryView.swift */,
-				645D71422B9355AB00C67EEE /* DialHeaderView.swift */,
+				645D71492B9579F500C67EEE /* Summary */,
 			);
 			path = Nurture;
 			sourceTree = "<group>";
@@ -209,6 +206,25 @@
 				642F96BF2AF9272F00556EBB /* NurtureUITestsLaunchTests.swift */,
 			);
 			path = NurtureUITests;
+			sourceTree = "<group>";
+		};
+		645D71482B9444A400C67EEE /* InitialEvaluation */ = {
+			isa = PBXGroup;
+			children = (
+				C4E0C7142B90223400B22FA5 /* InitialEvaluationView.swift */,
+				645D71442B9362F200C67EEE /* InitialEvalutationViewModel.swift */,
+				645D71462B9423DC00C67EEE /* InitialEvalModel.swift */,
+			);
+			path = InitialEvaluation;
+			sourceTree = "<group>";
+		};
+		645D71492B9579F500C67EEE /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				64303A9D2B92FABE00DDBB8B /* EvaluationSummaryView.swift */,
+				645D71422B9355AB00C67EEE /* DialHeaderView.swift */,
+			);
+			path = Summary;
 			sourceTree = "<group>";
 		};
 		64DC15392B223FD100CACCA9 /* Frameworks */ = {
