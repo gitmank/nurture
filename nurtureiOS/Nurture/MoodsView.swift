@@ -30,17 +30,20 @@ struct MoodButton: View {
         NavigationLink(destination: InitialEvaluationView(type: $moodText)) {
             ZStack {
                 RoundedRectangle(cornerRadius: 15)
-                    .foregroundStyle(Color(uiColor: UIColor(hex: "D9D9D9")!))
-                    .frame(width:300,height: 200)
-                VStack {
-                    Image(imageName)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 275, height: 150)
-                    Text(moodText)
-                        .foregroundColor(.black)
-                        .font(.headline)
-                }
+                    .foregroundStyle(Color(uiColor: UIColor(hex: "f9f9f9")!))
+                    .frame(width:315,height: 200)
+                
+                Image(imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 275, height: 150)
+    
+                Text(moodText)
+                    .foregroundColor(.blue)
+                    .font(.headline)
+                    .padding([.top], 180)
+                    .padding([.trailing],150)
+                
             }
         }
         .padding()

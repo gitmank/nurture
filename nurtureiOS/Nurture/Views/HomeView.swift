@@ -15,13 +15,19 @@ struct HomeView: View {
             GeometryReader{ geo in
                 VStack {
                     Text("Take Initial Assessment")
-                        .font(.largeTitle)
+                        .font(.title2)
                         .bold()
                         .foregroundStyle(.black)
-                    Divider()
+                        .padding(.init(top: 20, leading: 0, bottom: 0, trailing: 120))
+                    Text("\"You are stronger than you think, braver than you feel, and smarter than you know\" 😇")
+                        .italic()
+                        .frame(width: 350, height: 50, alignment: .leading)
+                    
+                    
                     MoodButton(imageName: "Depression", moodText: "depression")
                     MoodButton(imageName: "Anxiety", moodText: "anxiety")
                     Spacer()
+                    
                 }
                 .background{
                     RoundedRectangle(cornerRadius: 10)
@@ -30,6 +36,7 @@ struct HomeView: View {
        
                 .frame(width: geo.size.width, height: geo.size.height)
                 .navigationTitle("Home")
+                Divider()
             }
         }
   
