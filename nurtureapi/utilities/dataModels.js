@@ -10,9 +10,11 @@ const User = mongoose.model("User", userSchema, "users");
 
 const reportSchema = new mongoose.Schema({
     uid:        { type: String, required: true },
-    date:       { type: String, default: new Date().toString() },
+    date:       { type: String, default: Date.now() },
     type:       { type: String, required: true },
     responses:  { type: Array, required: true },
+    result:     { type: String, default: "" },
+    isPending:  { type: Boolean, default: false },
 });
 const Report = mongoose.model("Report", reportSchema, 'reports');
 

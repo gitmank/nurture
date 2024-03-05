@@ -51,9 +51,21 @@ const updateProfile = async (req, res) => {
     }
 }
 
+const getResult = async (req, res) => {
+    try {
+        await connectToMongoDB();
+        const report = await Report.findOne({ uid: req.user.uid, type: req.params.type });
+        res.json(report).status(200);
+    } catch (error) {
+        console.log(error);
+        res.status(500).send("error retrieving results");
+    }
+}
+
 module.exports = {
     getAssessment,
     saveAssessment,
     getProfile,
     updateProfile,
+    getResult
 };
