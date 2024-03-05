@@ -39,33 +39,42 @@ struct InitialEvaluationView: View {
                             .frame(width:385, height: 250)
                             .padding(.init(top: 0, leading: 20, bottom: 10, trailing: 20))
                         
-                        
                         Text(question) // Display each item in the arr array
                             .font(.title2)
-                            .bold()
-                            .padding(.init(top: 2, leading: 10, bottom: 200, trailing: 5))
-                        
-                        
-                        
-                        
-                        
-                        
+                            .fontWeight(.semibold)
+                            .padding(.init(top: 2, leading: 5, bottom: 200, trailing: 0))
+                            .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+    
                         VStack{
                             ForEach(options.indices, id: \.self) { index in
                                 let option = options[index]
                                 
                                 radioButtonView(questionIndex: currentQuestionIndex,currentquestion: $currentQuestionIndex, optionIndex: index, options: option, selectedIndex: $selectedOption)
                                     .font(.title3)
-                                
-                                
-                                
+                 
                             }
-                            
                         }
                     }
                     
                 } else {
-                    Text("Assessment done")
+ 
+                    ZStack{
+                        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                            .foregroundStyle((Color(uiColor: UIColor(hex: "F8F8F8")!)))
+                            .shadow(color: .gray, radius: 3, x:-5,y:5)
+                            .frame(width:385, height: 300)
+                            .padding(.init(top: 0, leading: 20, bottom: 10, trailing: 20))
+                        
+                        VStack{
+                            Text("THANK YOU FOR YOUR RESPONSE! 😊 \n ")
+                                .fontWeight(.semibold)
+                                .padding(.bottom,20)
+                            Text("You can come back here and attempt it again \n And remember... \n We'll always be here for you :)")
+                                .multilineTextAlignment(.leading)
+                        }
+                    }
+                    Spacer()
+                   
                     Button {
                         Task {
                             do {
@@ -78,24 +87,26 @@ struct InitialEvaluationView: View {
                     } label: {
                         Text("Submit")
                             .background(
-                                RoundedRectangle(cornerRadius: 25)
-                                    .frame(width: 100, height: 40, alignment: .center)
-                                    .foregroundStyle(Color.blue)
+                                RoundedRectangle(cornerRadius: 10)
+                                    .frame(width: 150, height: 50, alignment: .center)
+                                    .foregroundStyle(Color(uiColor: .systemGreen))
                             )
                             .foregroundColor(Color.white)
-                            .font(.title3)
+                            .font(.title2)
                     }
                     .padding(.leading, 175)
+                    Spacer()
+                    Text("Asking for help isnt giving up, it's giving up")
+                        .fontWeight(.semibold)
+                        .italic()
+                        .padding(.leading,40)
+                        .multilineTextAlignment(.center)
+                    
                 }
                 
-                
                 Spacer()
-                
-                
-                
-                
+          
                     .navigationTitle("Inital Evaluation")
-                
                 
             }
             .onAppear {
@@ -148,18 +159,12 @@ struct radioButtonView: View {
                     Text(options)
                         .foregroundStyle(.black)
                         .frame(width:275, height: 20)
-                    
-                    
-                    
-                    
+                   
                 }
             }
-            
         }
         .padding([.top],10)
-        
     }
-    
 }
 
 #Preview {
