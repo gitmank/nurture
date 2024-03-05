@@ -43,8 +43,8 @@ struct InitialEvaluationView: View {
                                 .font(.title2)
                                 .bold()
                                 .padding(.init(top: 2, leading: 10, bottom: 200, trailing: 5))
-                                
-                                
+                            
+                            
                             
                             
                             
@@ -55,8 +55,8 @@ struct InitialEvaluationView: View {
                                     
                                     radioButtonView(questionIndex: questionIndex,optionIndex: index, options: option, selectedIndex: $selectedOption)
                                         .font(.title3)
-                                        
-
+                                    
+                                    
                                 }
                                 
                             }
@@ -66,27 +66,27 @@ struct InitialEvaluationView: View {
                     
                 }
                 Spacer()
-               
-                    Button {
-                        Task {
-                            do {
-                                try await viewModel.sendInitialEvalResponses(selectedOption, type)
-                                dismiss()
-                            } catch {
-                                print("Error sending data: \(error)")
-                            }
+                
+                Button {
+                    Task {
+                        do {
+                            try await viewModel.sendInitialEvalResponses(selectedOption, type)
+                            dismiss()
+                        } catch {
+                            print("Error sending data: \(error)")
                         }
-                    } label: {
-                        Text("Submit")
-                            .background(
-                                RoundedRectangle(cornerRadius: 25)
-                                    .frame(width: 100, height: 40, alignment: .center)
-                                    .foregroundStyle(Color.blue)
-                            )
-                            .foregroundColor(Color.white)
-                            .font(.title3)
                     }
-                    .padding(.leading, 175)
+                } label: {
+                    Text("Submit")
+                        .background(
+                            RoundedRectangle(cornerRadius: 25)
+                                .frame(width: 100, height: 40, alignment: .center)
+                                .foregroundStyle(Color.blue)
+                        )
+                        .foregroundColor(Color.white)
+                        .font(.title3)
+                }
+                .padding(.leading, 175)
                 
                 
                 .navigationTitle("Inital Evaluation")
@@ -150,10 +150,10 @@ struct radioButtonView: View {
         .padding([.top],10)
         
     }
-        
+    
 }
 
-//#Preview {
-//    InitialEvaluationView(type: .constant("depression"))
-//}
+#Preview {
+    InitialEvaluationView(type: .constant("depression"))
+}
 
