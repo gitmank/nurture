@@ -16,6 +16,7 @@ struct InitialEvaluationView: View {
     @Binding var type : String
     @State var questionnaire: [String:String] = [:]
     @State var selectedOption: [Int] = Array(repeating: -1, count: 9)
+    @State var currentQuestionIndex = 0
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -27,69 +28,73 @@ struct InitialEvaluationView: View {
                     .padding(.init(top: 0, leading: 30, bottom: 0, trailing: 20))
                 Divider()
                 
-                ScrollView {
-                    ForEach(questions.indices, id: \.self) { questionIndex in
-                        let question = questions[questionIndex]
+                
+                if !questions.isEmpty && currentQuestionIndex < questions.count {
+                    let question = questions[currentQuestionIndex]
+                    
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 25.0)
+                            .foregroundStyle((Color(uiColor: UIColor(hex: "F8F8F8")!)))
+                            .shadow(color: .gray, radius: 3, x:-5,y:5)
+                            .frame(width:385, height: 250)
+                            .padding(.init(top: 0, leading: 20, bottom: 10, trailing: 20))
                         
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 25.0)
-                                .foregroundStyle((Color(uiColor: UIColor(hex: "F8F8F8")!)))
-                                .shadow(color: .gray, radius: 3, x:-5,y:5)
-                                .frame(width:385, height: 250)
-                                .padding(.init(top: 0, leading: 20, bottom: 10, trailing: 20))
-                            
-                            
-                            Text(question) // Display each item in the arr array
-                                .font(.title2)
-                                .bold()
-                                .padding(.init(top: 2, leading: 10, bottom: 200, trailing: 5))
-                            
-                            
-                            
-                            
-                            
-                            
-                            VStack{
-                                ForEach(options.indices, id: \.self) { index in
-                                    let option = options[index]
-                                    
-                                    radioButtonView(questionIndex: questionIndex,optionIndex: index, options: option, selectedIndex: $selectedOption)
-                                        .font(.title3)
-                                    
-                                    
-                                }
+                        
+                        Text(question) // Display each item in the arr array
+                            .font(.title2)
+                            .bold()
+                            .padding(.init(top: 2, leading: 10, bottom: 200, trailing: 5))
+                        
+                        
+                        
+                        
+                        
+                        
+                        VStack{
+                            ForEach(options.indices, id: \.self) { index in
+                                let option = options[index]
+                                
+                                radioButtonView(questionIndex: currentQuestionIndex,currentquestion: $currentQuestionIndex, optionIndex: index, options: option, selectedIndex: $selectedOption)
+                                    .font(.title3)
+                                
+                                
                                 
                             }
+                            
                         }
-                        
                     }
                     
+                } else {
+                    Text("Assessment done")
+                    Button {
+                        Task {
+                            do {
+                                try await viewModel.sendInitialEvalResponses(selectedOption, type)
+                                dismiss()
+                            } catch {
+                                print("Error sending data: \(error)")
+                            }
+                        }
+                    } label: {
+                        Text("Submit")
+                            .background(
+                                RoundedRectangle(cornerRadius: 25)
+                                    .frame(width: 100, height: 40, alignment: .center)
+                                    .foregroundStyle(Color.blue)
+                            )
+                            .foregroundColor(Color.white)
+                            .font(.title3)
+                    }
+                    .padding(.leading, 175)
                 }
+                
+                
                 Spacer()
                 
-                Button {
-                    Task {
-                        do {
-                            try await viewModel.sendInitialEvalResponses(selectedOption, type)
-                            dismiss()
-                        } catch {
-                            print("Error sending data: \(error)")
-                        }
-                    }
-                } label: {
-                    Text("Submit")
-                        .background(
-                            RoundedRectangle(cornerRadius: 25)
-                                .frame(width: 100, height: 40, alignment: .center)
-                                .foregroundStyle(Color.blue)
-                        )
-                        .foregroundColor(Color.white)
-                        .font(.title3)
-                }
-                .padding(.leading, 175)
                 
                 
-                .navigationTitle("Inital Evaluation")
+                
+                    .navigationTitle("Inital Evaluation")
                 
                 
             }
@@ -119,6 +124,7 @@ struct InitialEvaluationView: View {
 
 struct radioButtonView: View {
     var questionIndex : Int
+    @Binding var currentquestion : Int
     var optionIndex: Int
     var options: String
     @Binding var selectedIndex: [Int]
@@ -128,6 +134,9 @@ struct radioButtonView: View {
             Button(action:
                     {
                 selectedIndex[questionIndex] = optionIndex
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    currentquestion += 1
+                }
                 print(selectedIndex)
             }){
                 HStack{
