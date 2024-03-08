@@ -27,7 +27,7 @@ const Assessment = mongoose.model("Assessment", assessmentSchema, 'assessments')
 
 const trackingSchema = new mongoose.Schema({
     uuid:   { type: String, required: true, unique: true },
-    date:   { type: Number, default: 0 },
+    stamp:  { type: Number, default: 0 },
     seen:   { type: Boolean, default: false },
 });
 const Tracking = mongoose.model("Tracking", trackingSchema, 'tracking');
