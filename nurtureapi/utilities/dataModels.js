@@ -29,6 +29,7 @@ const trackingSchema = new mongoose.Schema({
     uuid:   { type: String, required: true, unique: true },
     stamp:  { type: Number, default: 0 },
     seen:   { type: Boolean, default: false },
+    ip:     { type: String }
 });
 const Tracking = mongoose.model("Tracking", trackingSchema, 'tracking');
 
