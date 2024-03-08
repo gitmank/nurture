@@ -4,7 +4,7 @@ require('dotenv').config();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const { validateToken } = require('./utilities/middleware');
-const { getAssessment, saveAssessment, getProfile, updateProfile, getResult } = require('./utilities/dataController');
+const { getAssessment, saveAssessment, getProfile, updateProfile, getResult, updateTracking } = require('./utilities/dataController');
 const corsConfig = require('./utilities/cors-config');
 
 // initialize express app
@@ -22,6 +22,7 @@ app.get('/', (req, res) => {
 
 // public routes
 app.get('/assessment/:type', (req, res) => getAssessment(req, res))
+app.get('/tracking/:uuid', (req, res) => updateTracking(req, res))
 
 // all private routes beyond this point
 app.use((req, res, next) => validateToken(req, res, next));
@@ -29,7 +30,7 @@ app.use((req, res, next) => validateToken(req, res, next));
 app.get('/profile', (req, res) => getProfile(req, res))
 app.post('/profile', (req, res) => updateProfile(req, res))
 app.post('/assessment/:type', (req, res) => saveAssessment(req, res))
-app.get('/result/:type/:uid', (req, res) => getResult(req, res))
+app.get('/result/:type', (req, res) => getResult(req, res))
 
 // listen
 const port = process.env.PORT || 3000;

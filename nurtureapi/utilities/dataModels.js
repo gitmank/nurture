@@ -25,8 +25,16 @@ const assessmentSchema = new mongoose.Schema({
 });
 const Assessment = mongoose.model("Assessment", assessmentSchema, 'assessments');
 
+const trackingSchema = new mongoose.Schema({
+    uuid:   { type: String, required: true },
+    date:   { type: String, default: Date.now() },
+    seen:   { type: String, default: false },
+});
+const Tracking = mongoose.model("Tracking", trackingSchema, 'tracking');
+
 module.exports = {
     User,
     Assessment,
     Report,
+    Tracking,
 };
