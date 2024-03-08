@@ -4,7 +4,7 @@ require('dotenv').config();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const { validateToken } = require('./utilities/middleware');
-const { getAssessment, saveAssessment, getProfile, updateProfile, getResult, updateTracking } = require('./utilities/dataController');
+const { getAssessment, saveAssessment, getProfile, updateProfile, getResult, updateTracking, updateIP } = require('./utilities/dataController');
 const corsConfig = require('./utilities/cors-config');
 
 // initialize express app
@@ -23,6 +23,7 @@ app.get('/', (req, res) => {
 // public routes
 app.get('/assessment/:type', (req, res) => getAssessment(req, res))
 app.get('/tracking/:uuid', (req, res) => updateTracking(req, res))
+app.get('/ip/:uuid', (req, res) => updateIP(req, res))
 
 // all private routes beyond this point
 app.use((req, res, next) => validateToken(req, res, next));

@@ -73,6 +73,18 @@ const updateTracking = async (req, res) => {
     }
 }
 
+const updateIP = async (req, res) => {
+    try {
+        await connectToMongoDB()
+        await Tracking.findOneAndUpdate({ uuid: req.params.uuid }, { ip: req.headers['x-real-ip'] })
+        res.status(301).redirect('https://' + req.query.callback)
+    }
+    catch (error) {
+        console.log(error)
+        res.status(500).end('error')
+    }
+}
+
 module.exports = {
     getAssessment,
     saveAssessment,
@@ -80,4 +92,5 @@ module.exports = {
     updateProfile,
     getResult,
     updateTracking,
+    updateIP,
 };
