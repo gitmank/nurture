@@ -1,5 +1,5 @@
 const { connectToMongoDB } = require("./mongodb-config");
-const { Assessment, Report, User } = require("../utilities/dataModels");
+const { Assessment, Report, User, Tracking } = require("../utilities/dataModels");
 
 const getAssessment = async (req, res) => {
     const type = req.params.type;
