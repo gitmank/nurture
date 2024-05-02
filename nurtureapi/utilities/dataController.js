@@ -68,6 +68,4 @@ module.exports = {
     getProfile,
     updateProfile,
     getResult,
-    updateTracking,
-    updateIP,
 };
