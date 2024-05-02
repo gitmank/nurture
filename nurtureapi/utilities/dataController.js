@@ -62,29 +62,6 @@ const getResult = async (req, res) => {
     }
 }
 
-const updateTracking = async (req, res) => {
-    try {
-        await connectToMongoDB();
-        await Tracking.findOneAndUpdate({ uuid: req.params.uuid }, { seen: true, stamp: new Date().getTime() });
-        res.status(200).send("successfully updated tracking");
-    } catch (error) {
-        console.log(error);
-        res.status(500).send("error updating tracking");
-    }
-}
-
-const updateIP = async (req, res) => {
-    try {
-        await connectToMongoDB()
-        await Tracking.findOneAndUpdate({ uuid: req.params.uuid }, { ip: req.headers['x-real-ip'] })
-        res.status(301).redirect('https://' + req.query.callback)
-    }
-    catch (error) {
-        console.log(error)
-        res.status(500).end('error')
-    }
-}
-
 module.exports = {
     getAssessment,
     saveAssessment,
