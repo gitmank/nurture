@@ -132,3 +132,6 @@ dist
 nurtureiOS/Nurture/GoogleService-Info.plist
 .vscode/settings.json
 nurtureapi/utilities/serviceAccountKey.json
+.venv
+.vscode
+__pycache__
