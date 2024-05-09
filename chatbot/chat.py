@@ -5,9 +5,10 @@ import json
 import random
 import numpy as np
 import pickle
-import nltk
+import nltk, os
 from nltk.stem import WordNetLemmatizer
 import tensorflow as tf
+from pathlib import Path
 
 # Download NLTK data
 nltk.download('punkt')
@@ -16,12 +17,12 @@ nltk.download('wordnet')
 lemmatizer = WordNetLemmatizer()
 
 # Load trained model and associated data
-words = pickle.load(open(r'C:\Users\Dell\Desktop\chatbot\words.pkl', 'rb'))
-classes = pickle.load(open(r'C:\Users\Dell\Desktop\chatbot\classes.pkl', 'rb'))
-model = tf.keras.models.load_model(r'C:\Users\Dell\Desktop\chatbot\chatbot_model.h5')
+words = pickle.load(open(Path(os.getcwd()).joinpath('words.pkl'), 'rb'))
+classes = pickle.load(open(Path(os.getcwd()).joinpath('classes.pkl'), 'rb'))
+model = tf.keras.models.load_model(Path(os.getcwd()).joinpath('chatbot_model.h5'))
 
 # Load intents JSON file
-with open(r'C:\Users\Dell\Desktop\chatbot\intents.json') as file:
+with open(Path(os.getcwd()).joinpath('intents.json')) as file:
     intents = json.load(file)
 
 
