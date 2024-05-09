@@ -49,7 +49,12 @@ struct ProfileView: View {
         NavigationStack{
         GeometryReader{ geo in
             VStack {
-                Text("Profile")
+                    Text("Profile")
+                        .font(.title)
+                        .padding(.init(top: 10, leading: -130, bottom: 5, trailing: 0))
+                Divider()
+                
+                
                 Button{
                     showLogoutAlert = true
                 } label: {
