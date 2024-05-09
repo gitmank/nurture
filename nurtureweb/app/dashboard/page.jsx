@@ -4,9 +4,46 @@ import BottomNav from "@/components/BottomNav";
 import DashboardSuspense from "@/components/DashboardSuspense";
 import SignOutButton from "@/components/SignOutButton";
 import ProfileDetails from "@/components/ProfileDetails";
+import { useEffect, useState } from "react";
+
+const levels = {
+  "Minimal": "🔵⚪️⚪️⚪️⚪️",
+  "Mild": "🔵🔵⚪️⚪️⚪️",
+  "Moderate": "🔵🔵🔵⚪️⚪️",
+  "High": "🔵🔵🔵🔵⚪️",
+  "Severe": "🔵🔵🔵🔵🔵",
+}
 
 export default function DashboardPage() {
   const [user, error] = useAuth();
+  const [result, setResult] = useState([]);
+
+  useEffect(() => {
+    if (!user) return;
+    getResult();
+  }, [user]);
+
+  const getResult = async () => {
+    const token = await user.getIdToken();
+    Promise.all([
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/result/depression`, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }).then((res) => res.json()),
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/result/anxiety`, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }).then((res) => res.json()),
+    ])
+      .then((data) => {
+        setResult([...result, ...data[0], ...data[1]]);
+      })
+      .catch((error) => console.error(error));
+  };
 
   if (user) {
     return (
@@ -46,8 +83,28 @@ export default function DashboardPage() {
           </section>
           <section className="flex flex-col border-2 border-primary-default rounded-lg p-4 w-full md:max-w-[800px] h-max items-center justify-between gap-8 text-center md:text-left overflow-scroll no-scrollbar mb-16">
             <h1 className="text-xl font-bold text-left w-full">
-              Well-being Report
+              Recent Reports
             </h1>
+            <div className="flex flex-row flex-wrap w-full h-full justify-around items-center">
+              {
+                result.map((report, index) => (
+                  <div key={index} className="flex flex-col w-max h-max items-center justify-center gap-2 text-center md:text-left overflow-scroll no-scrollbar">
+                    <h2 className="text-base lg:text-lg font-bold text-left w-full">
+                      {levels[report.result]}
+                    </h2>
+                    <h2 className="text-base lg:text-lg font-bold text-left w-full">
+                      risk of {report.type}
+                    </h2>
+                    <p className="text-base font-light text-left w-full pb-2 border-dashed border-b-2 rounded-none border-secondary-default">
+                      {report.result}
+                    </p>
+                    <p className="text-[10px] font-light text-right w-full">
+                      {new Date(report.timestamp).toLocaleString()}
+                    </p>
+                  </div>
+                ))
+              }
+            </div>
             <div className="flex flex-col md:flex-row w-full md:max-w-[800px] h-max items-center justify-between gap-8 text-center md:text-left overflow-scroll no-scrollbar"></div>
           </section>
           <BottomNav currentPath={"/dashboard"} />

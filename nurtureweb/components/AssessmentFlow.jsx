@@ -55,7 +55,7 @@ export default function AssessmentFlow({ assessment }) {
           setSaving(SAVE_STATUS.SAVED);
           setTimeout(() => {
             router.push("/dashboard");
-          }, 500);
+          }, 1000);
         } else {
           setSaving(SAVE_STATUS.ERROR);
         }

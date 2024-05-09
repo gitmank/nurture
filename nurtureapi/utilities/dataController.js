@@ -20,8 +20,10 @@ const saveAssessment = async (req, res) => {
             type: req.params.type,
             responses: req.body.responses,
             uid: req.user.uid,
+            timestamp: new Date().getTime(),
         });
         await report.save();
+        fetch(`https://nurtureml.manomay.co/evaluate/${req.params.type}`);
         res.status(200).end('successfully saved responses');
     } catch (error) {
         console.log(error);
@@ -54,7 +56,7 @@ const updateProfile = async (req, res) => {
 const getResult = async (req, res) => {
     try {
         await connectToMongoDB();
-        const report = await Report.findOne({ uid: req.user.uid, type: req.params.type });
+        const report = await Report.find({ uid: req.user.uid, type: req.params.type }).sort({ timestamp: -1 }).limit(1);
         res.json(report).status(200);
     } catch (error) {
         console.log(error);
