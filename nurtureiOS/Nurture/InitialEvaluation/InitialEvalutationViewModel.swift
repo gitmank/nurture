@@ -12,9 +12,9 @@ import FirebaseAuth
 class InitialEvalutationViewModel: ObservableObject{
   
     @Published var fetchedResult: [String: Any]?
-    func initialEvalFetchQuestions() {
+    func initialEvalFetchQuestions(_ type: String) {
         
-        let url = URL(string:"https://mank.devscene.co/assessment/depression")!
+        let url = URL(string:"https://mank.devscene.co/assessment/\(type)")!
         
         var request = URLRequest(url:url)
         request.httpMethod = "GET"
@@ -40,8 +40,8 @@ class InitialEvalutationViewModel: ObservableObject{
         task.resume()
     }
     
-    func sendInitialEvalResponses(_ responses: [Int]) async throws {
-        let url = URL(string: "https://mank.devscene.co/assessment/depression")!
+    func sendInitialEvalResponses(_ responses: [Int], _ type: String) async throws {
+        let url = URL(string: "https://mank.devscene.co/assessment/\(type)")!
         
         //Firebase token for user
         guard let tokenId = try await Auth.auth().currentUser?.getIDToken() else{

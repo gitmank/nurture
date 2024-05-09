@@ -11,21 +11,24 @@ import GoogleSignInSwift
 
 struct LoginView: View {
     @StateObject var viewModel = LoginViewModel()
-    @State private var showInitialEvalView = false
+    @State private var showHomeView = false
     var body: some View {
         VStack(alignment: .center, spacing: 25){
             Image("icon 1")
-                .padding(.bottom,50)
+                .frame(width: 50, height: 250, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .padding(50)
+            
                 
             Text("Access Nurture with Google")
                 .bold()
                 .foregroundStyle(.black)
                 .font(.title2)
             Text("We understand the sensitive nature of health data and never store data that we don't require explicitly")
+                .italic()
                 .padding([.leading,.trailing],20)
-                .font(.custom("caroni", size: 18))
+//                .font(.custom("caroni", size: 18))
                 .foregroundStyle(.black)
-                .multilineTextAlignment(.center)
+                .multilineTextAlignment(.leading)
                 .background{
                     RoundedRectangle(cornerRadius: 10)
                         .foregroundStyle(Color(uiColor: UIColor(hex: "2EC9FB")!))
@@ -36,17 +39,19 @@ struct LoginView: View {
                 Task {
                     do {
                         try await viewModel.googleSignIn()
-                        showInitialEvalView = true
+                        showHomeView = true
                     } catch {
                         print("Error")
                     }
                 }
             }
+            .shadow(color: .gray, radius: 3)
             .padding()
-            .fullScreenCover(isPresented: $showInitialEvalView) {
-                InitialEvaluationView()
+            .fullScreenCover(isPresented: $showHomeView) {
+                Dashboard(selectedTab: 0)
             }
         }
+        .background(Color.white)
     }
 }
 

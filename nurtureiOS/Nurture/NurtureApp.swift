@@ -7,7 +7,7 @@
 
 import SwiftUI
 import Firebase
-
+import FirebaseAuth
 
 @main
 struct NurtureApp: App {
@@ -16,7 +16,11 @@ struct NurtureApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack{
-                OnboardingScreen()
+                if Auth.auth().currentUser == nil {
+                    OnboardingScreen()
+                } else {
+                    Dashboard(selectedTab: 0)
+                }
             }
         }
     }

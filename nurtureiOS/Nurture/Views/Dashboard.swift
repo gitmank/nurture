@@ -16,8 +16,12 @@ struct Dashboard: View {
             TabView(selection: $selectedTab) {
                 HomeView()
                     .tag(0)
-                ProfileView()
+                CalendarView()
                     .tag(1)
+                DailyCheckInView()
+                    .tag(2)
+                ProfileView()
+                    .tag(3)
             }
             RoundedRectangle(cornerRadius: 2)
                 .foregroundStyle(Color(uiColor: UIColor(hex:"F8F8F8")!))
@@ -36,12 +40,35 @@ struct Dashboard: View {
                                         .font(.title)
                                 }
                         }
-                        .padding(.leading, 52)
-                        Spacer()
-                        Button(action: { selectedTab = 1 })
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        Button(action: {selectedTab = 1})
                         {
                             RoundedRectangle(cornerRadius: 10)
                                 .fill(selectedTab == 1 ? Color(uiColor: UIColor(hex: "2EC9FB")!) : Color.clear)
+                                .frame(width: 45, height: 45)
+                                .overlay {
+                                    Image(systemName: "calendar.badge.clock")
+                                        .foregroundStyle(Color.black)
+                                        .font(.title)
+                                }
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        Button(action: {selectedTab = 2})
+                        {
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(selectedTab == 2 ? Color(uiColor: UIColor(hex: "2EC9FB")!) : Color.clear)
+                                .frame(width: 45, height: 45)
+                                .overlay {
+                                    Image("checkInIcon")
+                                        .foregroundStyle(Color.black)
+                                        .font(.title)
+                                }
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        Button(action: { selectedTab = 3 })
+                        {
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(selectedTab == 3 ? Color(uiColor: UIColor(hex: "2EC9FB")!) : Color.clear)
                                 .frame(width: 45, height: 45)
                                 .overlay {
                                     Image(systemName: "person.fill")
@@ -49,25 +76,10 @@ struct Dashboard: View {
                                         .font(.title)
                                 }
                         }
-                        .padding(.trailing, 52)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                     }
+                    .padding()
                 }
-            Circle()
-                .fill(Color(uiColor: UIColor(hex: "2EC9FB")!))
-                .frame(width: 60, height: 60, alignment: .center)
-                .overlay {
-                    Button(action: { showCheckInView = true}) {
-                        Circle()
-                            .foregroundStyle(Color.white)
-                            .frame(width: 50, height: 50)
-                            .overlay {
-                                Image("checkInIcon")
-                            }
-                    }
-                }
-        }
-        .fullScreenCover(isPresented: $showCheckInView) {
-            DailyCheckInView()
         }
     }
 }

@@ -14,8 +14,8 @@ struct MoodsView: View {
             VStack{
                 Text("Moods")
                     .font(.largeTitle)
-                MoodButton(imageName: "Depression", moodText: "Depression")
-                MoodButton(imageName: "Anxiety", moodText: "Anxiety")
+                MoodButton(imageName: "Depression", moodText: "depression")
+                MoodButton(imageName: "Anxiety", moodText: "anxiety")
             }
         }
         
@@ -24,23 +24,26 @@ struct MoodsView: View {
 
 struct MoodButton: View {
     let imageName: String
-    let moodText: String
+    @State var moodText: String
     
     var body: some View {
-        NavigationLink(destination: QuestionaireView(selectedMood: moodText)) {
+        NavigationLink(destination: InitialEvaluationView(type: $moodText)) {
             ZStack {
                 RoundedRectangle(cornerRadius: 15)
+                    .foregroundStyle(Color(uiColor: UIColor(hex: "f9f9f9")!))
+                    .frame(width:315,height: 200)
+                
+                Image(imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 275, height: 150)
+    
+                Text(moodText)
                     .foregroundColor(.blue)
-                    .frame(width:220,height: 200)
-                VStack {
-                    Image(imageName)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 200, height: 150)
-                    Text(moodText)
-                        .foregroundColor(.white)
-                        .font(.headline)
-                }
+                    .font(.headline)
+                    .padding([.top], 180)
+                    .padding([.trailing],150)
+                
             }
         }
         .padding()
