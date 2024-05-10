@@ -18,8 +18,7 @@ export default function DashboardPage() {
       },
       body: JSON.stringify({ message }),
     }).then((res) => res.json());
-    setMessages([...messages, { message: response.reply, sender: "bot" }]);
-    console.log(response);
+    setMessages([...messages, { message: response, sender: "bot" }]);
   };
 
   if (user) {
