@@ -10,6 +10,8 @@ export default function DashboardPage() {
 
   const sendMessage = async () => {
     const message = document.getElementById("message").value;
+    if (!message) return;
+    document.getElementById("message").value = "";
     const response = await fetch("https://nurtureML.manomay.co/chat", {
       method: "POST",
       headers: {
@@ -51,7 +53,7 @@ export default function DashboardPage() {
             {messages.map((msg, index) => (
               <p
                 key={index}
-                className={`p-2 rounded-md ${
+                className={`p-1 px-3 rounded-full ${
                   msg.sender === "user"
                     ? "bg-primary-default text-white self-end"
                     : "bg-sky-400 text-white self-start"
