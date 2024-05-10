@@ -13,9 +13,9 @@ const navlinks = [
     icon: "✅",
   },
   {
-    name: "History",
-    href: "/dashboard/history",
-    icon: "🗓️",
+    name: "Chat",
+    href: "/dashboard/chat",
+    icon: "💬",
   },
 ];
 
