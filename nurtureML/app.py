@@ -1,9 +1,8 @@
-from flask import Flask
+from flask import Flask, request
 from flask_cors import CORS
 from pymongo import MongoClient
 from dotenv import load_dotenv
-import utils
-import os
+import utils, os
 from chat import chat_response
 
 # load .env file
@@ -50,9 +49,10 @@ def evaluate_anxiety():
     except Exception as e:
         return str(e), 500
     
-@app.get('/chat/<text>')
-def chat(text):
+@app.post('/chat')
+def chat():
     try:
+        text = request.json['message']
         response = chat_response(text)
         return response, 200
     except Exception as e:
