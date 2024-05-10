@@ -32,6 +32,7 @@ export default function DashboardPage() {
           <div className="flex flex-row w-full h-max justify-center items-center gap-8">
             <input
               type="text"
+              autoComplete="off"
               name=""
               id="message"
               className="p-2 rounded-md outline-1 outline-secondary-default bg-sky-100"
@@ -44,7 +45,7 @@ export default function DashboardPage() {
               Send
             </button>
           </div>
-          <div className="flex flex-col items-start w-full min-h-[400px] h-max bg-sky-100 p-4 rounded-md mb-12 gap-2 text-sm md:text-base">
+          <div className="flex flex-col items-start w-full min-h-[400px] h-max bg-sky-100 p-4 rounded-md mb-12 gap-4 text-sm md:text-base">
             {messages.length === 0 && (
               <p className="self-start px-3 p-1 bg-sky-400 text-white rounded-full">
                 Hi, how can I help you today?
