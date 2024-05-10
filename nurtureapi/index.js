@@ -4,7 +4,7 @@ require('dotenv').config();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const { validateToken } = require('./utilities/middleware');
-const { getAssessment, saveAssessment, getProfile, updateProfile, getResult, saveCheckin } = require('./utilities/dataController');
+const { getAssessment, saveAssessment, getProfile, updateProfile, getResult, saveCheckin, getCheckin } = require('./utilities/dataController');
 const corsConfig = require('./utilities/cors-config');
 
 // initialize express app
@@ -30,6 +30,7 @@ app.get('/profile', (req, res) => getProfile(req, res))
 app.post('/profile', (req, res) => updateProfile(req, res))
 app.post('/assessment/:type', (req, res) => saveAssessment(req, res))
 app.get('/result/:type', (req, res) => getResult(req, res))
+app.get('/checkin', (req, res) => getCheckin(req, res))
 app.post('/checkin', (req, res) => saveCheckin(req, res))
 
 // listen

@@ -81,6 +81,17 @@ const saveCheckin = async (req, res) => {
     }
 }
 
+const getCheckin = async (req, res) => {
+    try {
+        await connectToMongoDB();
+        const checkins = await Checkin.find({ uid: req.user.uid }).sort({ timestamp: -1 }).limit(7);
+        res.json(checkins).status(200);
+    } catch (error) {
+        console.log(error);
+        res.status(500).send("error retrieving checkins");
+    }
+}
+
 module.exports = {
     getAssessment,
     saveAssessment,
@@ -88,4 +99,5 @@ module.exports = {
     updateProfile,
     getResult,
     saveCheckin,
+    getCheckin,
 };
