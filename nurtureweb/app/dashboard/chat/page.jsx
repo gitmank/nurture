@@ -44,7 +44,7 @@ export default function DashboardPage() {
               Send
             </button>
           </div>
-          <div className="flex flex-col items-start w-full min-h-[400px] h-max bg-sky-100 p-4 rounded-md mb-12 gap-1">
+          <div className="flex flex-col items-start w-full min-h-[400px] h-max bg-sky-100 p-4 rounded-md mb-12 gap-2 text-sm md:text-base">
             {messages.length === 0 && (
               <p className="self-start px-3 p-1 bg-sky-400 text-white rounded-full">
                 Hi, how can I help you today?
