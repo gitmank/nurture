@@ -1,5 +1,5 @@
 const { connectToMongoDB } = require("./mongodb-config");
-const { Assessment, Report, User, Tracking } = require("../utilities/dataModels");
+const { Assessment, Report, User, Tracking, Checkin } = require("../utilities/dataModels");
 
 const getAssessment = async (req, res) => {
     const type = req.params.type;
@@ -64,10 +64,28 @@ const getResult = async (req, res) => {
     }
 }
 
+const saveCheckin = async (req, res) => {
+    try {
+        await connectToMongoDB();
+        const checkin = new Checkin({
+            uid: req.user.uid,
+            timestamp: new Date().getTime(),
+            value: req.body.value,
+            tag: req.body.tag,
+        });
+        await checkin.save();
+        res.status(200).end('successfully saved checkin');
+    } catch (error) {
+        console.log(error);
+        res.status(500).send("error saving checkin");
+    }
+}
+
 module.exports = {
     getAssessment,
     saveAssessment,
     getProfile,
     updateProfile,
     getResult,
+    saveCheckin,
 };
