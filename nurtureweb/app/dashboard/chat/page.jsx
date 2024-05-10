@@ -10,7 +10,6 @@ export default function DashboardPage() {
 
   const sendMessage = async () => {
     const message = document.getElementById("message").value;
-    setMessages([...messages, { message, sender: "user" }]);
     const response = await fetch("https://nurtureML.manomay.co/chat", {
       method: "POST",
       headers: {
@@ -18,7 +17,7 @@ export default function DashboardPage() {
       },
       body: JSON.stringify({ message }),
     }).then((res) => res.json());
-    setMessages([...messages, { message: response, sender: "bot" }]);
+    setMessages([...messages, { message, sender: "user" }, { message: response, sender: "bot" }]);
   };
 
   if (user) {
