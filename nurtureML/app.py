@@ -2,7 +2,7 @@ from flask import Flask, request
 from flask_cors import CORS
 from pymongo import MongoClient
 from dotenv import load_dotenv
-import utils, os
+import utils, os, json
 from chat import chat_response
 
 # load .env file
@@ -14,6 +14,7 @@ db = client['nurturedb']
 reports = db['reports']
 
 app = Flask(__name__)
+CORS(app)
 
 @app.get('/')
 def hello():
@@ -53,8 +54,11 @@ def evaluate_anxiety():
 def chat():
     try:
         text = request.json['message']
-        response = chat_response(text)
-        return response, 200
+        reply = chat_response(text)
+        response = {
+            'reply': reply
+        }
+        return json.dumps(reply), 200
     except Exception as e:
         return str(e), 500
 
