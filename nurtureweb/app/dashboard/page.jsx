@@ -13,10 +13,20 @@ const levels = {
   "High": "🔵🔵🔵🔵⚪️",
   "Severe": "🔵🔵🔵🔵🔵",
 }
+const moods = {
+  0: "😔",
+  1: "😔",
+  2: "🙁",
+  3: "😐",
+  4: "😀",
+  5: "😊",
+  6: "😊",
+}
 
 export default function DashboardPage() {
   const [user, error] = useAuth();
   const [result, setResult] = useState([]);
+  const [checkins, setCheckins] = useState([]);
 
   useEffect(() => {
     if (!user) return;
@@ -43,6 +53,13 @@ export default function DashboardPage() {
         setResult([...result, ...data[0], ...data[1]]);
       })
       .catch((error) => console.error(error));
+      const checkins = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/checkin`, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }).then((res) => res.json());
+      setCheckins(checkins);
   };
 
   if (user) {
@@ -81,7 +98,7 @@ export default function DashboardPage() {
               </a>
             </div>
           </section>
-          <section className="flex flex-col border-2 border-primary-default rounded-lg p-4 w-full md:max-w-[800px] h-max items-center justify-between gap-8 text-center md:text-left overflow-scroll no-scrollbar mb-16">
+          <section className="flex flex-col border-2 border-primary-default rounded-lg p-4 w-full md:max-w-[800px] h-max items-center justify-between gap-8 text-center md:text-left overflow-scroll no-scrollbar">
             <h1 className="text-xl font-bold text-left w-full">
               Recent Reports
             </h1>
@@ -106,6 +123,28 @@ export default function DashboardPage() {
               }
             </div>
             <div className="flex flex-col md:flex-row w-full md:max-w-[800px] h-max items-center justify-between gap-8 text-center md:text-left overflow-scroll no-scrollbar"></div>
+          </section>
+          <section className="flex flex-col border-2 border-primary-default rounded-lg p-4 w-full md:max-w-[800px] h-max items-center justify-between gap-8 text-center md:text-left overflow-scroll no-scrollbar mb-20">
+            <h1 className="text-xl font-bold text-left w-full">
+              Recent checkins
+            </h1>
+            <div className="flex flex-row w-full md:max-w-[800px] h-max items-center justify-start gap-4 text-center md:text-left overflow-scroll no-scrollbar">
+              {
+                checkins.map((checkin, index) => (
+                  <div key={index} className="flex flex-col w-max h-max items-center justify-center gap-2 text-center md:text-left overflow-scroll no-scrollbar">
+                    <h2 className="text-xl lg:text-2xl font-bold text-left w-full">
+                      {moods[Math.round(checkin.value / 20)]}
+                    </h2>
+                    <p className="text-sm font-light text-left w-full pb-2 border-dashed border-b-2 rounded-none border-secondary-default">
+                      {checkin.tag}
+                    </p>
+                    <p className="text-[10px] font-light text-right w-full">
+                      {new Date(checkin.timestamp).toLocaleString()}
+                    </p>
+                  </div>
+                ))
+              }
+            </div>
           </section>
           <BottomNav currentPath={"/dashboard"} />
         </main>
