@@ -4,6 +4,7 @@ from pymongo import MongoClient
 from dotenv import load_dotenv
 import utils
 import os
+from chat import chat_response
 
 # load .env file
 load_dotenv()
@@ -48,6 +49,14 @@ def evaluate_anxiety():
         return 'evaluated all pending reports', 200
     except Exception as e:
         return str(e), 500
+    
+@app.get('/chat/<text>')
+def chat(text):
+    try:
+        response = chat_response(text)
+        return response, 200
+    except Exception as e:
+        return str(e), 500
 
 if __name__ == '__main__':
-    app.run(threaded=True, processes=4, port=6000)
+    app.run(port=6000)
