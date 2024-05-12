@@ -35,6 +35,7 @@
 		C4CFA1DE2BED323000144D7E /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C4CFA1DD2BED323000144D7E /* GoogleSignInSwift */; };
 		C4CFA1E12BED327400144D7E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C4CFA1E02BED327400144D7E /* FirebaseAuth */; };
 		C4CFA1E32BED327400144D7E /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = C4CFA1E22BED327400144D7E /* FirebaseAuthCombine-Community */; };
+		C4CFA1F02BEDDCE600144D7E /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CFA1EF2BEDDCE600144D7E /* CalendarViewModel.swift */; };
 		C4E0C7152B90223400B22FA5 /* InitialEvaluationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E0C7142B90223400B22FA5 /* InitialEvaluationView.swift */; };
 		C4EAD9DF2B2D677600682FAA /* QuestionnaireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EAD9DE2B2D677600682FAA /* QuestionnaireView.swift */; };
 		C4EAD9E12B2D679D00682FAA /* MoodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EAD9E02B2D679D00682FAA /* MoodsView.swift */; };
@@ -89,6 +90,7 @@
 		C4AA6E152B90343600695679 /* DailyCheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCheckInView.swift; sourceTree = "<group>"; };
 		C4AA6E172B90344200695679 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		C4AA6E192B90347700695679 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
+		C4CFA1EF2BEDDCE600144D7E /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		C4E0C7142B90223400B22FA5 /* InitialEvaluationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialEvaluationView.swift; sourceTree = "<group>"; };
 		C4EAD9DE2B2D677600682FAA /* QuestionnaireView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireView.swift; sourceTree = "<group>"; };
 		C4EAD9E02B2D679D00682FAA /* MoodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodsView.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				C4AA6E192B90347700695679 /* Dashboard.swift */,
 				C4AA6E132B90342700695679 /* HomeView.swift */,
 				C4F588CD2B96326E007E5AD2 /* CalendarView.swift */,
+				C4CFA1EF2BEDDCE600144D7E /* CalendarViewModel.swift */,
 				C4AA6E152B90343600695679 /* DailyCheckInView.swift */,
 				C4AA6E172B90344200695679 /* ProfileView.swift */,
 			);
@@ -394,6 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4CFA1F02BEDDCE600144D7E /* CalendarViewModel.swift in Sources */,
 				645D71472B9423DC00C67EEE /* InitialEvalModel.swift in Sources */,
 				642F96A42AF9272D00556EBB /* ContentView.swift in Sources */,
 				C4F588CE2B96326E007E5AD2 /* CalendarView.swift in Sources */,
