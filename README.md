@@ -26,10 +26,10 @@ npm run dev
 ### Phase 2 - onboarding
 - [x] create dashboard
 - [x] initial assessment
-- [ ] initial evaluation
+- [x] initial evaluation
 
 ### Phase 3 - data collection
-- [ ] daily checkins
+- [x] daily checkins
 - [ ] weekly and monthly stats
 
 ### Phase 4 - monitoring and alerts
